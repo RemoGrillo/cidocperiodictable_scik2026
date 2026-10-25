@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Periodic Table · Sci-K 2026</title>
+<style>
+/* fonts bundled locally (fontsource 5.1.0) so the deck works offline */
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/inter-tight-latin-ext-400-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/inter-tight-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/inter-tight-latin-ext-500-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/inter-tight-latin-500-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/inter-tight-latin-ext-600-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/inter-tight-latin-600-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:800;font-display:swap;src:url("fonts/inter-tight-latin-ext-800-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:800;font-display:swap;src:url("fonts/inter-tight-latin-800-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:900;font-display:swap;src:url("fonts/inter-tight-latin-ext-900-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:normal;font-weight:900;font-display:swap;src:url("fonts/inter-tight-latin-900-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/inter-tight-latin-ext-400-italic.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:italic;font-weight:400;font-display:swap;src:url("fonts/inter-tight-latin-400-italic.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Inter Tight";font-style:italic;font-weight:600;font-display:swap;src:url("fonts/inter-tight-latin-ext-600-italic.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Inter Tight";font-style:italic;font-weight:600;font-display:swap;src:url("fonts/inter-tight-latin-600-italic.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-mono-latin-ext-400-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/ibm-plex-mono-latin-ext-500-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --bg:#ffffff; --ink:#0d0d0d; --muted:#7a7a7a; --faint:#c9c9c9; --accent:#ff3d00;
+  --wash:#f3f2ef; --wash2:#e7e5e0; --soft:rgba(255,61,0,.14);
+  --ok:#1a7f37; --local:#9a3412; --part:#b9b7b1;
+  --sans:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --pad:4.5vmin;
+  --t:2.5vmin;      /* body text */
+  --tm:1.65vmin;    /* mono labels */
+  --tc:1.9vmin;     /* code */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--ink)}
+body{font-family:var(--sans);-webkit-font-smoothing:antialiased}
+
+.slide{
+  position:absolute;inset:0;display:flex;flex-direction:column;gap:3vmin;padding:var(--pad);
+  opacity:0;visibility:hidden;transition:opacity .35s ease,visibility .35s;background:var(--bg);color:var(--ink)
+}
+.slide.active{opacity:1;visibility:visible}
+.slide.dark{background:var(--ink);color:#fff;--muted:#8d8d8d;--faint:#3a3a3a;--wash:#1a1a1a;--wash2:#262626;--soft:rgba(255,61,0,.22)}
+.slide.red{background:var(--accent);color:var(--ink);--muted:rgba(0,0,0,.55);--faint:rgba(0,0,0,.28)}
+
+/* fit: the box grows to fill the slide; JS sizes the type to fill the box */
+.fit{flex:1 1 auto;min-height:0;min-width:0;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+  font-weight:800;line-height:.95;letter-spacing:-.035em;font-size:40px;padding-bottom:.12em}
+.fit.top{justify-content:flex-start}
+.fit>*{flex-shrink:0}
+.fit p{margin:0}
+.fit .reg{font-weight:400}
+
+.lab{font-family:var(--mono);font-size:clamp(11px,1.7vmin,17px);letter-spacing:.04em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;gap:2em;flex:0 0 auto}
+.src{font-family:var(--mono);font-size:clamp(11px,1.6vmin,16px);color:var(--muted);flex:0 0 auto;line-height:1.45}
+.acc{color:var(--accent)}
+.red .acc{color:#fff}
+.dim{color:var(--faint)}
+.mut{color:var(--muted)}
+i,em{font-style:italic}
+.q{font-weight:400;letter-spacing:-.02em;line-height:1.1;font-size:3.6vmin}
+.q b{font-weight:800}
+
+.notes{display:none}
+body.show-notes .slide.active .notes{
+  display:block;position:fixed;left:0;right:0;bottom:0;max-height:34vh;overflow:auto;
+  background:rgba(13,13,13,.95);color:#eee;font-family:var(--sans);font-size:16px;line-height:1.5;
+  padding:18px 22px;z-index:5
+}
+#clock{display:none}
+body.show-notes #clock{display:block;position:fixed;top:12px;right:16px;background:rgba(13,13,13,.92);color:#eee;font-family:var(--mono);font-size:15px;line-height:1.4;padding:8px 12px;z-index:7;letter-spacing:.02em}
+#clock b{color:var(--accent);font-weight:500}
+.lab.part{font-size:clamp(18px,3.6vmin,36px);color:var(--ink);letter-spacing:.02em}
+#track{position:fixed;left:0;right:0;bottom:0;height:7px;background:rgba(0,0,0,.08);z-index:6}
+#bar{position:absolute;left:0;top:0;bottom:0;background:var(--accent);width:0;transition:width .3s ease}
+#pn{position:fixed;right:var(--pad);bottom:calc(var(--pad) - .2em);font-family:var(--mono);font-size:clamp(12px,1.8vmin,18px);color:var(--muted);z-index:6;letter-spacing:.04em}
+body.bg-dark #track{background:rgba(255,255,255,.14)}
+body.bg-dark #pn{color:#8d8d8d}
+body.bg-red #track{background:rgba(0,0,0,.15)}
+body.bg-red #bar{background:var(--ink)}
+body.bg-red #pn{color:rgba(0,0,0,.6)}
+body.first #pn{display:none}
+
+/* ---------- dense content slides ---------- */
+.c{padding-bottom:calc(var(--pad) + 2.6vmin)}
+.h{font-weight:800;font-size:5.3vmin;line-height:1.02;letter-spacing:-.035em;flex:0 0 auto}
+.h .dim{color:var(--faint)}
+.h.s{font-size:4.4vmin}
+.body{flex:1 1 auto;min-height:0;display:flex;gap:4.5vmin;align-items:stretch}
+.body.v{flex-direction:column;gap:2.6vmin}
+.col{display:flex;flex-direction:column;gap:2.4vmin;min-width:0}
+.g1{flex:1 1 0}.g2{flex:2 1 0}.g3{flex:3 1 0}.g15{flex:1.5 1 0}
+.mid{justify-content:center}
+.end{justify-content:flex-end}
+.fig{flex:1 1 auto;min-height:0;display:flex;align-items:center;justify-content:center;position:relative}
+.fig>svg{width:100%;height:100%;display:block;overflow:visible}
+.fig.g1{flex:1 1 0;min-width:0}.fig.g15{flex:1.5 1 0;min-width:0}.fig.g2{flex:2 1 0;min-width:0}
+
+.pts{display:flex;flex-direction:column;gap:2.1vmin}
+.pt{border-top:1.5px solid var(--faint);padding-top:1.1vmin}
+.pt b{display:block;font-family:var(--mono);font-weight:500;font-size:var(--tm);letter-spacing:.05em;text-transform:uppercase;color:var(--accent);margin-bottom:.5vmin}
+.pt p{font-size:var(--t);line-height:1.22;max-width:40ch}
+.pt p strong{font-weight:700}
+.pt.k b{color:var(--muted)}
+.pts.sm .pt p{font-size:2.15vmin}
+.red .pt b{color:#fff}
+
+.row{display:flex;gap:3.5vmin;min-height:0}
+.row>*{flex:1 1 0;min-width:0}
+
+.code{font-family:var(--mono);font-size:var(--tc);line-height:1.5;background:var(--wash);padding:1.8vmin 2.4vmin;white-space:pre;overflow:hidden;border-left:3px solid var(--accent);color:var(--ink)}
+.dark .code{color:#eee;background:#1a1a1a}
+.code .k{color:var(--accent)}
+.code .cm{color:var(--muted)}
+.code .b{font-weight:500;background:var(--soft)}
+.code.sm{font-size:1.65vmin}
+.code.xs{font-size:1.5vmin;line-height:1.45}
+.code.wrap{white-space:pre-wrap}
+.code.gr{border-left-color:var(--muted)}
+.mono{font-family:var(--mono)}
+code{font-family:var(--mono);font-size:.86em;background:var(--wash);padding:.05em .3em}
+
+.tb{border-collapse:collapse;font-size:var(--t);width:100%}
+.tb th{font-family:var(--mono);font-weight:400;font-size:var(--tm);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);text-align:left;padding:.7vmin 1.2vmin;border-bottom:1.5px solid currentColor;white-space:nowrap}
+.tb td{padding:.85vmin 1.2vmin;border-bottom:1px solid var(--faint);vertical-align:middle}
+.tb td.n,.tb th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tb tr.hl td{font-weight:700}
+.tb.sm{font-size:2.15vmin}
+
+.stat{font-weight:900;letter-spacing:-.045em;line-height:.88;font-size:14vmin}
+.stat small{display:block;font-family:var(--mono);font-weight:400;font-size:var(--tm);letter-spacing:.03em;line-height:1.35;color:var(--muted);margin-top:1.8vmin;text-transform:uppercase;max-width:34ch}
+.stat .u{font-size:.55em;letter-spacing:-.02em}
+.slide.active .rise{animation:rise .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes rise{from{opacity:0;transform:translateY(3vmin)}to{opacity:1;transform:none}}
+
+/* step-through fragments: data-at appears at step n; data-hl highlights from step n; data-cur only at step n */
+[data-at]{opacity:0;transform:translateY(1.2vmin);transition:opacity .45s ease,transform .45s ease}
+[data-at].on{opacity:1;transform:none}
+svg [data-at]{transform:none}
+.fit [data-at],.h [data-at]{transform:none}
+
+/* controls */
+.btn{font-family:var(--mono);font-size:var(--tm);text-transform:uppercase;letter-spacing:.04em;padding:.5vmin 1.1vmin;background:transparent;color:inherit;border:1.5px solid var(--faint);cursor:pointer}
+.btn.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn kbd{font-family:var(--mono);opacity:.6;margin-left:.6vmin}
+
+/* bars (bonus widgets) */
+.bars{display:flex;flex-direction:column;gap:.9vmin;width:100%}
+.br{display:grid;grid-template-columns:var(--lw,16ch) 1fr var(--vw,9ch);align-items:center;gap:1.4vmin;font-size:2.1vmin}
+.br .l{font-family:var(--mono);font-size:1.85vmin;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.br .tr{height:2.3vmin;background:var(--wash);position:relative}
+.br .fl{position:absolute;left:0;top:0;bottom:0;background:var(--ink);width:0;transition:width .7s cubic-bezier(.2,.8,.2,1),background .3s;border-radius:0 4px 4px 0}
+.br .vl{font-family:var(--mono);font-size:1.85vmin;text-align:left;font-variant-numeric:tabular-nums;white-space:nowrap}
+.br.pick .fl{background:var(--accent)}
+.br.pick .l,.br.pick .vl{font-weight:500}
+.br.out .l,.br.out .vl{color:var(--muted)}
+.br.out .fl{background:var(--faint)}
+.br .th{position:absolute;top:-.5vmin;bottom:-.5vmin;width:0;border-left:2px dashed var(--accent);z-index:1}
+.bh{font-family:var(--mono);font-size:var(--tm);text-transform:uppercase;letter-spacing:.05em;color:var(--muted);display:flex;justify-content:space-between;gap:2em}
+
+/* legend */
+.legend{display:flex;gap:2.4vmin;font-family:var(--mono);font-size:var(--tm);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);flex-wrap:wrap;align-items:center}
+.legend i{display:inline-block;width:1.8vmin;height:1.8vmin;vertical-align:-.25vmin;margin-right:.7vmin;font-style:normal;border-radius:2px}
+.sw-a{background:var(--accent)}.sw-l{background:var(--local)}.sw-p{background:var(--part)}.sw-i{background:var(--ink)}
+
+/* svg helpers */
+svg text{font-family:var(--sans);fill:currentColor}
+svg .m{font-family:var(--mono)}
+svg .mu{fill:var(--muted)}
+svg .ac{fill:var(--accent)}
+svg .wt{fill:#fff}
+svg .st{stroke:currentColor;fill:none}
+svg .sa{stroke:var(--accent);fill:none}
+svg .sf{stroke:var(--faint);fill:none}
+svg .sm{stroke:var(--muted);fill:none}
+svg .bxw{fill:var(--wash)}
+svg .bxa{fill:var(--accent)}
+svg .bxi{fill:var(--ink)}
+svg .halo-t{paint-order:stroke;stroke:var(--bg);stroke-width:5px;stroke-linejoin:round}
+
+/* ---------- flow list ---------- */
+.flow4{display:flex;flex-direction:column;gap:1.3vmin}
+.f4{display:grid;grid-template-columns:5.5vmin 1fr;gap:1.6vmin;align-items:baseline;border-top:1.5px solid var(--faint);padding-top:1.1vmin}
+.f4 .nb{font-weight:900;font-size:3.6vmin;color:var(--accent);letter-spacing:-.03em}
+.f4 b{font-weight:800;font-size:2.8vmin;letter-spacing:-.02em}
+.f4 p{font-size:2.15vmin;line-height:1.25;margin-top:.3vmin}
+
+/* the tool's own palette: model hues and the seven class families */
+:root{
+  --crm:#1B1B1B; --inf:#7B2D8B; --dig:#0E7C7B; --sci:#3A3FA0;
+  --fT:#3783A8; --fA:#72005F; --fC:#C78F15; --fP:#801401; --fAp:#68810C; --fPl:#206D33; --fTy:#F88C34; --fN:#D8D8D8;
+}
+
+code{white-space:nowrap}
+
+/* ---------- code chips: the left stripe is the model, as in the tool ---------- */
+.cc{display:inline-block;font-family:var(--mono);font-weight:500;font-size:.9em;line-height:1.3;padding:.04em .45em .04em .4em;background:var(--wash);border-left:.3em solid var(--crm);white-space:nowrap;letter-spacing:0}
+.cc small{font-family:var(--sans);font-weight:400;font-size:.92em;margin-left:.45em;letter-spacing:-.005em}
+.cc.sci{border-left-color:var(--sci)}.cc.dig{border-left-color:var(--dig)}.cc.inf{border-left-color:var(--inf)}
+.dark .cc{background:#262626;color:#fff}.dark .cc.crm{border-left-color:#9a9a9a}
+.pp{font-family:var(--mono);font-size:.82em;color:var(--muted);white-space:nowrap}
+.pp b{font-weight:500;color:var(--ink)}
+.sub{font-family:var(--mono);font-size:.82em;color:var(--accent);white-space:nowrap}
+.mleg{display:flex;gap:2.2vmin;flex-wrap:wrap;font-family:var(--mono);font-size:var(--tm);text-transform:uppercase;letter-spacing:.04em;color:var(--muted);align-items:center}
+.mleg i{display:inline-block;width:.55vmin;height:2vmin;vertical-align:-.35vmin;margin-right:.8vmin}
+.m-crm{background:var(--crm)}.m-inf{background:var(--inf)}.m-dig{background:var(--dig)}.m-sci{background:var(--sci)}
+
+/* ---------- 02 · atlas ---------- */
+.atlas{position:relative;flex:1 1 auto;min-height:0}
+.ct{position:absolute;left:0;top:0;height:2.6vmin;display:flex;align-items:center;white-space:nowrap;font-size:2.05vmin;line-height:1.2;
+  transition:left 1.3s cubic-bezier(.6,0,.2,1),top 1.3s cubic-bezier(.6,0,.2,1),opacity .5s}
+.ct i{display:block;width:1.3vmin;height:1.3vmin;border-radius:50%;background:var(--faint);flex:0 0 auto;margin-right:1vmin;transition:background .5s,transform .5s}
+.ct b{font-weight:600;transition:opacity .4s}
+.ct .co{font-family:var(--mono);font-size:.78em;color:var(--muted);margin-left:.9vmin;transition:opacity .4s}
+.atlas.map .ct .co{opacity:0;position:absolute}
+.atlas.map .ct i{background:var(--ink)}
+.atlas.map .ct b{position:absolute;left:2.1vmin;font-size:.86em;text-shadow:0 0 3px #fff,0 0 3px #fff,0 0 6px #fff}
+.atlas.map .ct.lb.sl b{left:auto;right:calc(100% + .1vmin)}
+.atlas.map .ct:not(.lb) b{opacity:0}
+.atlas.map .ct.lb.sb b{left:-1.5vmin;top:1.6vmin}
+.atlas.map .ct.home i{background:var(--accent);transform:scale(1.35)}
+.atlas.map .ct.home b{color:var(--accent);font-weight:800;opacity:1}
+.atlas.nb .ct{opacity:.28}
+.atlas.nb .ct.near,.atlas.nb .ct.home{opacity:1}
+.atlas.nb .ct.near i{background:var(--accent)}
+.atlas.nb .ct.lb:not(.home):not(.near) b{opacity:0}
+.at-ring{position:absolute;border:2px dashed var(--accent);border-radius:50%;opacity:0;transform:scale(.3);transition:opacity .5s,transform .8s cubic-bezier(.3,1.4,.4,1);pointer-events:none}
+.atlas.nb .at-ring{opacity:1;transform:none}
+.at-pane{position:absolute;left:0;top:0;width:36%;display:flex;flex-direction:column;gap:2vmin;opacity:0;visibility:hidden;transition:opacity .5s .5s,visibility .5s .5s}
+.at-pane.on{opacity:1;visibility:visible}
+.big{font-size:3.1vmin;line-height:1.18;letter-spacing:-.015em}
+.big b{font-weight:800}
+.dl{display:grid;grid-template-columns:auto auto;gap:.5vmin 2.4vmin;justify-content:start;font-size:2.2vmin}
+.dl span:nth-child(even){font-family:var(--mono);font-size:.85em;color:var(--muted);text-align:right;align-self:center}
+
+/* ---------- 03 · workflow ---------- */
+.wf{display:grid;grid-template-columns:repeat(4,1fr);gap:1.8vmin;flex:0 0 auto}
+.wf-c{background:var(--wash);padding:1.8vmin 1.9vmin 2.1vmin;display:flex;flex-direction:column;gap:1.1vmin;border-top:5px solid var(--faint);min-width:0}
+.wf-c.sci{border-top-color:var(--sci)}.wf-c.dig{border-top-color:var(--dig)}.wf-c.inf{border-top-color:var(--inf)}
+.wf-c .nb{font-family:var(--mono);font-size:var(--tm);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.wf-c .wt{font-weight:800;font-size:3.1vmin;letter-spacing:-.02em;line-height:1.05;margin-bottom:.6vmin}
+.tv{display:flex;flex-direction:column;align-items:flex-start;gap:.45vmin;font-size:2.35vmin}
+.tv .cc{white-space:normal}
+.tv .pp{padding-left:1.2vmin;font-size:1.95vmin;white-space:normal}
+.tv .sub{font-size:1.95vmin;padding-left:1.2vmin;white-space:normal}
+.wf-c .gl{font-size:1.9vmin;line-height:1.3;color:var(--muted);margin-top:auto}
+
+/* ---------- 04 · documents ---------- */
+.nums{display:flex;flex-direction:column;gap:1.5vmin}
+.nm{display:grid;grid-template-columns:11vmin 1fr;align-items:baseline;gap:1.6vmin;border-top:1.5px solid var(--faint);padding-top:1vmin}
+.nm>b{font-weight:900;font-size:6.2vmin;letter-spacing:-.04em;line-height:.9;text-align:right}
+.nm span{font-size:2.35vmin;line-height:1.2}
+.nm span code{font-size:.8em}
+.nm.a>b{color:var(--accent)}
+#docs-svg text{font-family:var(--sans)}
+#docs-svg .dn{font-weight:800;font-size:25px}
+#docs-svg .dv{font-family:var(--mono);font-size:15px;fill:var(--muted)}
+#docs-svg .lk{fill:none;stroke-linecap:round}
+#docs-svg .lt{font-family:var(--mono);font-weight:500;font-size:19px}
+#docs-svg .ls{font-family:var(--mono);font-size:13px;fill:var(--muted)}
+#docs-svg .hl-l{transition:stroke .4s,opacity .4s}
+.slide[data-k="2"] #docs-svg .dim2{opacity:.18}
+.slide[data-k="2"] #docs-svg .hl-l{color:var(--accent)!important}
+
+/* ---------- 05 · Mendeleev ---------- */
+.mdl{position:relative;flex:1 1 auto;min-height:0;min-width:0}
+.el{position:absolute;left:0;top:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--wash);border:1.5px solid var(--wash2);
+  transition:left 1.2s cubic-bezier(.6,0,.2,1),top 1.2s cubic-bezier(.6,0,.2,1),width 1.2s cubic-bezier(.6,0,.2,1),height 1.2s cubic-bezier(.6,0,.2,1),opacity .5s,background .5s,border-color .5s}
+.el b{font-weight:800;font-size:2.1em;letter-spacing:-.03em;line-height:1}
+.el small{font-family:var(--mono);color:var(--muted);line-height:1.2}
+.el em{font-family:var(--mono);font-style:normal;font-size:.6em;white-space:nowrap;color:var(--muted);text-transform:lowercase;line-height:1.1}
+.el.gap{background:transparent;border:2px dashed var(--accent);opacity:0}
+.el .g1,.el .g2{display:flex;flex-direction:column;align-items:center}
+.el.gap .g2{display:none}
+.el.gap b{color:var(--accent)}
+.mdl.tab .el.gap{opacity:1}
+.mdl.found .el.gap{background:var(--accent);border-style:solid;border-color:var(--accent)}
+.mdl.found .el.gap .g1{display:none}
+.mdl.found .el.gap .g2{display:flex}
+.mdl.found .el.gap b,.mdl.found .el.gap small,.mdl.found .el.gap em{color:#fff}
+.md-h{position:absolute;top:0;font-family:var(--mono);font-size:var(--tm);color:var(--muted);text-align:center;opacity:0;transition:opacity .5s .8s}
+.mdl.tab .md-h{opacity:1}
+.md-r{position:relative;min-width:0}
+.md-pane{position:absolute;inset:0;display:flex;flex-direction:column;gap:2vmin;justify-content:center;opacity:0;visibility:hidden;transition:opacity .45s,visibility .45s}
+.md-pane.on{opacity:1;visibility:visible}
+.dark-q{font-size:2.3vmin;line-height:1.3;border-left:3px solid var(--accent);padding-left:1.6vmin}
+
+/* ---------- 07 · anatomy of a cell ---------- */
+#cell-svg text{font-family:var(--sans)}
+#cell-svg .cl{font-size:15px;fill:var(--ink)}
+#cell-svg .cl tspan.m{font-family:var(--mono);font-size:13px;fill:var(--muted)}
+#cell-svg .ld{stroke:var(--muted);stroke-width:1.3;fill:none}
+#cell-svg .ld-d{fill:var(--muted)}
+
+/* ---------- live demos ---------- */
+.slide.demo{gap:1.5vmin;padding-bottom:calc(var(--pad) + 1.6vmin)}
+.h.xs{font-size:3.5vmin}
+.live{position:relative;flex:1 1 auto;min-height:0;overflow:hidden;background:#fff;outline:1.5px solid var(--wash2)}
+.live img.lv-fb{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:left top;display:block}
+.live iframe{position:absolute;left:0;top:0;border:0;transform-origin:0 0;background:transparent}
+body.preview .live iframe,body.print .live iframe,body.lv-off .live iframe{display:none}
+.live .lv-tag{position:absolute;right:1vmin;bottom:1vmin;font-family:var(--mono);font-size:1.3vmin;text-transform:uppercase;letter-spacing:.05em;background:rgba(13,13,13,.78);color:#fff;padding:.3vmin .8vmin;z-index:2;pointer-events:none;opacity:0;transition:opacity .3s}
+body.lv-off .live .lv-tag,body.preview .live .lv-tag{opacity:1}
+.rec{display:flex;gap:1.2vmin;align-items:stretch;flex:0 0 auto;font-size:1.95vmin}
+.rec>div{background:var(--wash);padding:.8vmin 1.2vmin;line-height:1.25;min-width:0}
+.rec>div b{display:block;font-family:var(--mono);font-weight:500;font-size:1.4vmin;text-transform:uppercase;letter-spacing:.05em;color:var(--accent);margin-bottom:.2vmin}
+.rec>div.a{background:var(--accent);color:#fff}
+.rec>div.a b{color:#fff}
+.cap{flex:0 0 auto;display:flex;gap:2vmin;align-items:center;min-height:5.2vmin}
+.cap .qs{display:flex;gap:.8vmin;flex:0 0 auto}
+.cap .tx{flex:1 1 auto;font-size:2.05vmin;line-height:1.3;min-width:0}
+.cap .tx>div{display:none}
+.cap .tx>div.cur{display:block;animation:rise .45s cubic-bezier(.2,.8,.2,1) both}
+
+/* ---------- 10 · merge ---------- */
+.mg{display:grid;grid-template-columns:1fr 3vmin 1.15fr;gap:1.4vmin;align-items:center}
+.dicts{display:flex;flex-direction:column;gap:1vmin}
+.dct{font-family:var(--mono);font-size:2.1vmin;background:var(--wash);padding:.9vmin 1.3vmin;border-left:5px solid var(--crm);line-height:1.45}
+.dct.sci{border-left-color:var(--sci)}.dct.dig{border-left-color:var(--dig)}.dct.inf{border-left-color:var(--inf)}
+.dct b{font-family:var(--sans);font-weight:800;font-size:2.3vmin;margin-right:1vmin}
+.mg .arrow{text-align:center;font-size:6vmin}
+.uni{background:var(--ink);color:#fff;padding:1.8vmin 2vmin;display:flex;flex-direction:column;gap:1.2vmin}
+.uni .kl{font-family:var(--mono);font-size:var(--tm);text-transform:uppercase;letter-spacing:.05em;color:#9a9a9a}
+.uni .cc{background:#262626;color:#fff}
+.uni .cc.crm{border-left-color:#9a9a9a}
+.uni .ln{font-size:2.4vmin;line-height:1.5}
+.uni .ln .sub{color:#ff8a5c}
+
+/* ---------- 14 · uptake ---------- */
+.stats{display:flex;flex-direction:column;gap:3vmin}
+.stat.m{font-size:9.5vmin}
+.stat.m small{margin-top:1vmin}
+
+/* ---------- closing ---------- */
+.fin{flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;font-weight:900;letter-spacing:-.045em;line-height:.92}
+.fin .ty{font-size:8vmin;font-weight:800;margin-bottom:2vmin}
+.fin .qq{font-size:15vmin;color:var(--accent)}
+.fin .url{font-family:var(--mono);font-weight:500;font-size:3.2vmin;letter-spacing:-.01em;margin-top:3vmin;color:var(--ink)}
+.fin .url a{color:inherit;text-decoration-thickness:.06em;text-underline-offset:.2em}
+
+/* ---------- presenter thumbnails: ?preview hides the chrome ---------- */
+body.preview #track,body.preview #pn,body.preview #clock,body.preview .notes{display:none!important}
+
+/* ---------- print / PDF: ?print stacks every slide at its last step ---------- */
+body.print,html.print{height:auto;overflow:visible}
+body.print .slide{position:relative;inset:auto;width:100vw;height:100vh;opacity:1;visibility:visible;transition:none;break-after:page;page-break-after:always}
+body.print [data-at]{opacity:1;transform:none;transition:none}
+body.print #track,body.print #pn,body.print .notes,body.print #clock,body.print .rk-ctl,body.print .btn{display:none!important}
+@page{size:1600px 900px;margin:0}
+</style>
+</head>
+<body>
+
+<!-- 1 · title -->
+<section class="slide" data-t="10">
+  <div class="lab"><span>Sci-K 2026 · 6th International Workshop on Scientific Knowledge</span><span>ISWC 2026 · Bari</span></div>
+  <div class="fit"><p>The CIDOC CRM Periodic&nbsp;Table.</p><p class="reg"><span class="acc" style="font-weight:800">Documentation you can test</span> to support the adoption of scientific research ontologies for the humanities</p></div>
+  <div class="lab"><span>Remo Grillo</span><span>26 October 2026</span></div>
+  <div class="lab" style="margin-top:-2vmin"><span>University of Bologna · I Tatti, The Harvard University Center for Italian Renaissance Studies</span><span></span></div>
+  <aside class="notes"><b>[0:10]</b> Good afternoon: the last talk before the discussion. I'm Remo Grillo, University of Bologna and I Tatti, Harvard. <i>Keys: → next, ← back, P presenter window, N notes + clock, F fullscreen, B bonus tracks, T reset clock, R reload the live demo, O screenshots instead of live demos.</i></aside>
+</section>
+
+<!-- 2 · atlas -->
+<section class="slide c" data-t="45" data-w="atlas" data-steps="2">
+  <div class="lab"><span>an analogy · 02</span><span>53 Italian cities · coordinates rounded to 0.1°</span></div>
+  <h2 class="h s">An atlas, published as <span class="acc">a list of cities.</span></h2>
+  <div class="atlas">
+    <div class="at-pane" id="at-p1"><p class="big">The same data, placed by their coordinates.</p><p class="big"><b>Nothing was added.</b> Italy appears.</p></div>
+    <div class="at-pane" id="at-p2"><p class="big">Which cities lie within <b>150&nbsp;km of Bari</b>?</p><p class="big">In the list: <b><span id="at-c"></span> distances</b> to compute. On the map: a glance. <b class="acc"><span id="at-n"></span>.</b></p><div class="dl" id="at-dl"></div></div>
+  </div>
+  <aside class="notes"><b>[0:45]</b> Imagine an atlas published like this: every city, alphabetically, with its coordinates. Nothing is missing, everything is there. [→] Now the same data, placed by their coordinates. Nothing has been added, and Italy appears. [→] Ask a simple question: which cities are within 150 km of Bari, where we are? In the list you compute 52 distances. On the map you look: six. The arrangement turns a computation into a glance. Keep this picture: it is how we publish ontology documentation.</aside>
+</section>
+
+<!-- 3 · the family -->
+<section class="slide c" data-t="45" data-steps="4">
+  <div class="lab"><span>the family · 03</span><span>CIDOC CRM 7.1.3 · CRMsci 3.2 · CRMdig 5.0 · CRMinf 1.2.1</span></div>
+  <h2 class="h s">The CIDOC CRM family: <span class="acc">a schema for research data</span>, not only for museum records.</h2>
+  <div class="body v mid">
+    <div class="mleg"><span><i class="m-crm"></i>CIDOC CRM · ISO 21127</span><span><i class="m-sci"></i>CRMsci · observation, measurement</span><span><i class="m-dig"></i>CRMdig · digital provenance</span><span><i class="m-inf"></i>CRMinf · argumentation, belief</span></div>
+    <div class="wf">
+      <div class="wf-c sci" data-at="1"><span class="nb">1 · CRMsci</span><span class="wt">A sample is taken</span>
+        <div class="tv"><span class="cc sci">S2<small>Sample Taking</small></span><span class="pp">↓ <b>O5</b> removed</span><span class="cc sci">S13<small>Sample</small></span></div>
+      </div>
+      <div class="wf-c sci" data-at="2"><span class="nb">2 · CRMsci</span><span class="wt">It is measured</span>
+        <div class="tv"><span class="cc sci">S21<small>Measurement</small></span><span class="pp">↓ <b>O24</b> measured</span><span class="cc sci">S13<small>Sample</small></span><span class="pp">and ↓ <b>O39</b> observed dimension</span><span class="cc">E54<small>Dimension</small></span></div>
+        <span class="gl">S13 is admissible: it descends from S15 Observable Entity, the declared range.</span>
+      </div>
+      <div class="wf-c dig" data-at="3"><span class="nb">3 · CRMdig</span><span class="wt">The instrument writes a file</span>
+        <div class="tv"><span class="cc dig">D11<small>Digital Measurement Event</small></span><span class="sub">⊑ S21 Measurement · in CRMsci</span><span class="pp">↓ <b>L20</b> has created</span><span class="cc dig">D9<small>Data Object</small></span></div>
+      </div>
+      <div class="wf-c inf" data-at="4"><span class="nb">4 · CRMsci → CRMinf</span><span class="wt">Someone draws a conclusion</span>
+        <div class="tv"><span class="cc sci">S5<small>Inference Making</small></span><span class="sub">⊑ I1 Argumentation · in CRMinf</span><span class="pp">↓ <b>J2</b> concluded that</span><span class="cc inf">I2<small>Belief</small></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="src">CRMsci 3.2 calls itself “a global schema for integrating metadata about scientific observation, measurements and processed data in descriptive and empirical sciences”. <span class="acc">⊑</span> marks a subclass declared towards another document.</div>
+  <aside class="notes"><b>[0:45]</b> The documentation I mean is that of CIDOC CRM, ISO 21127, and its extensions. It is usually filed under museum collections; read together, the extensions describe how an empirical claim comes to be, which is what several talks today were about. [→] A sample is taken: S2 removed S13. [→] It is measured: S21 measured S13, admissible because a sample is an observable entity, and the value is a dimension. [→] The instrument writes a file: D11 is a digital measurement event, CRMdig subclassing CRMsci, and it created a data object. [→] Someone draws a conclusion: inference making is an argumentation, CRMsci subclassing CRMinf, and an argumentation concluded that a belief. A standard vocabulary for research data. I'm not claiming a mapping to the models we heard today: the point is that it exists, and people struggle to read it.</aside>
+</section>
+
+<!-- 4 · four documents -->
+<section class="slide c" data-t="50" data-steps="2">
+  <div class="lab"><span>the problem · 04</span><span>counted from the machine-readable releases · paper, App. A</span></div>
+  <h2 class="h s">…documented as four separate lists. <span class="acc">The obstacle is documentary, not theoretical.</span></h2>
+  <div class="body">
+    <div class="col g1 mid nums">
+      <div class="nm"><b>4</b><span>normative documents, published as one HTML page per model and version</span></div>
+      <div class="nm"><b>4</b><span>code conventions: <code>E/P</code> · <code>S/O</code> · <code>D/L</code> · <code>I/J</code></span></div>
+      <div class="nm"><b>131</b><span>classes · 480 property entries</span></div>
+      <div class="nm a" data-at="1"><b>89</b><span>declarations whose target lives <b>in another document</b></span></div>
+      <div class="pt" data-at="2"><b>read CRMdig alone</b><p>You see that D11 created a D9. You miss that D11 <strong>is</strong> a measurement, ⊑ S21 in CRMsci, so it already carries <i>measured</i> and <i>observed dimension</i>.</p></div>
+    </div>
+    <div class="fig g15"><svg id="docs-svg" viewBox="0 0 900 540" aria-label="four documents and the links between them">
+      <g><rect x="10" y="20" width="240" height="150" style="fill:var(--wash)"/><rect x="10" y="20" width="240" height="7" style="fill:var(--inf)"/>
+        <text x="28" y="68" class="dn" style="fill:var(--inf)">CRMinf</text><text x="28" y="96" class="dv">1.2.1 · codes I / J</text><text x="28" y="132" class="dv">14 classes</text><text x="28" y="154" class="dv">52 property entries</text></g>
+      <g><rect x="330" y="20" width="240" height="150" style="fill:var(--wash)"/><rect x="330" y="20" width="240" height="7" style="fill:var(--sci)"/>
+        <text x="348" y="68" class="dn" style="fill:var(--sci)">CRMsci</text><text x="348" y="96" class="dv">3.2 · codes S / O</text><text x="348" y="132" class="dv">28 classes</text><text x="348" y="154" class="dv">77 property entries</text></g>
+      <g><rect x="650" y="20" width="240" height="150" style="fill:var(--wash)"/><rect x="650" y="20" width="240" height="7" style="fill:var(--dig)"/>
+        <text x="668" y="68" class="dn" style="fill:var(--dig)">CRMdig</text><text x="668" y="96" class="dv">5.0 · codes D / L</text><text x="668" y="132" class="dv">14 classes</text><text x="668" y="154" class="dv">43 property entries</text></g>
+      <g><rect x="10" y="372" width="880" height="150" style="fill:var(--wash)"/><rect x="10" y="372" width="880" height="7" style="fill:var(--crm)"/>
+        <text x="28" y="420" class="dn">CIDOC CRM</text><text x="28" y="448" class="dv">7.1.3 · ISO 21127 · codes E / P</text><text x="28" y="484" class="dv">75 classes · 308 property entries</text></g>
+      <g class="dim2" data-at="1" style="color:var(--inf)"><line x1="130" y1="176" x2="130" y2="350" class="lk" stroke="currentColor" stroke-width="10"/><path d="M116 348 L130 368 L144 348 Z" fill="currentColor"/>
+        <text x="152" y="262" class="lt" fill="currentColor">28</text><text x="152" y="282" class="ls">4 + 24</text></g>
+      <g class="dim2" data-at="1" style="color:var(--sci)"><line x1="450" y1="176" x2="450" y2="350" class="lk" stroke="currentColor" stroke-width="8"/><path d="M436 348 L450 368 L464 348 Z" fill="currentColor"/>
+        <text x="472" y="262" class="lt" fill="currentColor">20</text><text x="472" y="282" class="ls">10 + 10</text></g>
+      <g class="dim2" data-at="1" style="color:var(--dig)"><line x1="770" y1="176" x2="770" y2="350" class="lk" stroke="currentColor" stroke-width="10"/><path d="M756 348 L770 368 L784 348 Z" fill="currentColor"/>
+        <text x="792" y="262" class="lt" fill="currentColor">28</text><text x="792" y="282" class="ls">8 + 20</text></g>
+      <g class="dim2" data-at="1" style="color:var(--sci)"><line x1="326" y1="95" x2="270" y2="95" class="lk" stroke="currentColor" stroke-width="5"/><path d="M272 84 L254 95 L272 106 Z" fill="currentColor"/>
+        <text x="290" y="76" class="lt" fill="currentColor" text-anchor="middle">10</text><text x="290" y="128" class="ls" text-anchor="middle">4 + 6</text></g>
+      <g class="hl-l" data-at="1" style="color:var(--dig)"><line x1="646" y1="95" x2="590" y2="95" class="lk" stroke="currentColor" stroke-width="3.5"/><path d="M592 85 L574 95 L592 105 Z" fill="currentColor"/>
+        <text x="610" y="76" class="lt" fill="currentColor" text-anchor="middle">3</text><text x="610" y="128" class="ls" text-anchor="middle">1 + 2</text></g>
+    </svg></div>
+  </div>
+  <div class="src">Arrows: subClassOf + subPropertyOf declarations pointing out of their own document. Guillem &amp; Bruseker (2017): CIDOC CRM is “considered too complicated and abstract for application in real life scenarios”. Since then, the specification has grown.</div>
+  <aside class="notes"><b>[0:50]</b> Why do people struggle? Not because of theory, but because of documentation. Four normative documents, four code conventions, 131 classes, 480 property entries. [→] And they are interlocked, not parallel: 89 declarations point out of the document you are reading. 31 from CRMdig, 30 from CRMsci, 28 from CRMinf. [→] Concretely: open CRMdig alone and you read that D11 created a data object. You miss that D11 is a measurement, a subclass of S21 declared in another document, so it already carries “measured” and “observed dimension”. Nine years ago Guillem and Bruseker wrote that the CRM was too abstract for real life; since then, it has grown.</aside>
+</section>
+
+<!-- 5 · Mendeleev -->
+<section class="slide c" data-t="50" data-w="mend" data-steps="2">
+  <div class="lab"><span>an analogy · 05</span><span>Mendeleev, 1869–1871 · simplified: groups I–VII, first five rows</span></div>
+  <h2 class="h s">A periodic table, published as <span class="acc">a list of elements.</span></h2>
+  <div class="body">
+    <div class="mdl g15"></div>
+    <div class="col g1 md-r">
+      <div class="md-pane on" data-p="0"><p class="big">About sixty elements were known, each with its weight and its chemistry.</p><p class="big">As a list ordered by weight, they are <b>just numbers</b>.</p></div>
+      <div class="md-pane" data-p="1"><p class="big">Arranged by weight <b>and by behaviour</b>, the same data leave holes.</p><p class="big mut" style="font-size:2.4vmin">Titanium behaves like silicon: it moves right, and a gap opens. Arsenic behaves like phosphorus: two more gaps.</p><p class="big">1871: Mendeleev describes the missing elements, <b>weights included</b>.</p></div>
+      <div class="md-pane" data-p="2"><p class="big">Found: gallium 1875, scandium 1879, germanium 1886.</p><p class="dark-q">Gallium's discoverer measured a density of <b>4.7</b>. Mendeleev, who had never seen the element, wrote that it should be <b>about 6</b>. Purified and remeasured: <b>5.9</b>.</p><p class="big">The arrangement added no data. <b class="acc">It made the gaps visible, and a gap can be tested.</b></p></div>
+    </div>
+  </div>
+  <div class="src">Weights as in Mendeleev's 1871 table; group VIII omitted. Gallium: Lecoq de Boisbaudran (1875); scandium: Nilson (1879); germanium: Winkler (1886). Weights of the discovered elements are today's values.</div>
+  <aside class="notes"><b>[0:50]</b> A better-known case. Around 1869 Mendeleev worked with the elements already known, each with its weight and chemistry. As a list ordered by weight, they are just numbers. [→] Arranged by weight and by behaviour, they leave holes. Titanium behaves like silicon, so it moves right and a gap opens under aluminium; arsenic behaves like phosphorus: two more gaps. In 1871 he described the missing elements, with their weights. [→] Gallium was found in 1875, scandium in 1879, germanium in 1886. And the best part: gallium's discoverer measured a density of 4.7; Mendeleev, who had never seen the element, wrote that it should be about six. Purified and remeasured: 5.9. Ontologies aren't chemistry, and I won't predict a single class. But the lesson holds: the arrangement added no data. It made the gaps visible, and a gap is something you can test.</aside>
+</section>
+
+<!-- 6 · thesis -->
+<section class="slide dark" data-t="15" data-steps="1">
+  <div class="lab"><span>the claim · 06</span><span></span></div>
+  <div class="fit"><p><span class="reg">An interface doesn't only re-present what is known.</span> <span class="acc">It can make isolated facts talk to each other.</span></p></div>
+  <div class="lab" data-at="1"><span style="font-size:3.4vmin;color:#fff;text-transform:none;letter-spacing:-.01em;font-family:var(--sans);font-weight:700">For a modular standard: documentation you can test.</span><span></span></div>
+  <aside class="notes"><b>[0:15]</b> So an interface is not just a nicer way to show the same facts. It can do something: make isolated facts talk to each other. [→] For a modular standard, that means documentation you can test.</aside>
+</section>
+
+<!-- 7 · reading a cell -->
+<section class="slide c" data-t="40">
+  <div class="lab"><span>the tool · 07</span><span>CIDOC CRM Periodic Table · one static page, no build, no server</span></div>
+  <h2 class="h s">Reading a cell: <span class="acc">provenance, family and hierarchy at a glance.</span></h2>
+  <div class="body">
+    <div class="fig g15"><svg id="cell-svg" viewBox="0 0 900 440" aria-label="anatomy of the S5 cell">
+      <rect x="290" y="70" width="280" height="300" style="fill:var(--fT)"/>
+      <rect x="290" y="70" width="14" height="300" style="fill:var(--sci)"/>
+      <circle cx="318" cy="88" r="5" fill="#fff"/>
+      <text x="437" y="106" text-anchor="middle" fill="#fff" font-size="19">I1</text>
+      <text x="437" y="230" text-anchor="middle" fill="#fff" font-size="104">S5</text>
+      <text x="437" y="282" text-anchor="middle" fill="#fff" font-size="25">Inference Making</text>
+      <text x="437" y="354" text-anchor="middle" fill="#fff" font-size="16">S6,S7,S8</text>
+      <line x1="311" y1="88" x2="268" y2="88" class="ld"/><circle cx="268" cy="88" r="2.5" class="ld-d"/>
+      <text x="262" y="84" text-anchor="end" class="cl"><tspan font-weight="700">depth marker</tspan><tspan class="m" x="262" dy="19">smaller = deeper</tspan><tspan class="m" x="262" dy="17">S5: 6 steps below E1</tspan></text>
+      <line x1="297" y1="222" x2="268" y2="222" class="ld"/><circle cx="268" cy="222" r="2.5" class="ld-d"/>
+      <text x="262" y="218" text-anchor="end" class="cl"><tspan font-weight="700">model stripe</tspan><tspan class="m" x="262" dy="19">indigo = CRMsci</tspan></text>
+      <line x1="452" y1="100" x2="612" y2="100" class="ld"/><circle cx="612" cy="100" r="2.5" class="ld-d"/>
+      <text x="620" y="96" class="cl"><tspan font-weight="700">superclass codes</tspan><tspan class="m" x="620" dy="19">I1 Argumentation · declared in CRMinf</tspan></text>
+      <line x1="540" y1="226" x2="612" y2="226" class="ld"/><circle cx="612" cy="226" r="2.5" class="ld-d"/>
+      <text x="620" y="222" class="cl"><tspan font-weight="700">fill = family, inherited</tspan><tspan class="m" x="620" dy="19">S5 ⊑ I1 ⊑ E7 ⊑ E5 ⊑ E4 Temporal Entity</tspan></text>
+      <line x1="482" y1="349" x2="612" y2="349" class="ld"/><circle cx="612" cy="349" r="2.5" class="ld-d"/>
+      <text x="620" y="345" class="cl"><tspan font-weight="700">subclass codes</tspan><tspan class="m" x="620" dy="19">S6 · S7 · S8</tspan></text>
+    </svg></div>
+    <div class="col g1 mid pts">
+      <div class="pt"><b>placement follows the code</b><p>The prefix names the model and the kind of entry. One block per model, under a header in its hue.</p></div>
+      <div class="pt"><b>colour follows the hierarchy</b><p>Seven anchor classes, seven families, inherited through subClassOf. Adding CRMsci cost no colour work: <strong>20 of its 28</strong> classes came out as intended.</p></div>
+      <div class="pt"><b>the URL carries the state</b><p><code>?ont=crm,crmsci</code> · <code>?code=S4</code> · <code>?path=S13,D9</code>: every view is a citable link.</p></div>
+    </div>
+  </div>
+  <div class="src">Grouping classes into colour-coded families comes from the CIDOC CRM Game (Guillem &amp; Bruseker); the anchors, the derivation by inheritance and the provenance stripe are ours.</div>
+  <aside class="notes"><b>[0:40]</b> This is the CIDOC CRM Periodic Table. One cell: S5, inference making. The stripe says which model it comes from: CRMsci. The fill says which family it inherits, here temporal entities, through I1, E7, E5, E4: nothing is coloured by hand. On top, its superclass: I1, from another document. The dot shrinks as the class gets deeper. Three decisions do most of the work: placement follows the code, colour follows the hierarchy, the URL carries the state. Adding CRMsci cost no colour work: 20 of its 28 classes came out as intended. The colour families come from the CIDOC CRM Game.</aside>
+</section>
+
+<!-- 8 · demo 1 -->
+<section class="slide demo" data-t="60">
+  <div class="lab"><span>live · demo 1 · one surface</span><span style="text-transform:none">?ont=crm,crminf,crmdig,crmsci&amp;code=S5</span></div>
+  <h2 class="h xs">One surface: <span class="acc">four documents, 131 classes, one page.</span></h2>
+  <div class="live ia" data-src="?ont=crm,crminf,crmdig,crmsci&amp;code=S5" data-fallback="media/demo1-S5.png"></div>
+  <aside class="notes"><b>[1:00]</b> Live. [Scroll the table: base CRM, then CRMinf, CRMdig, CRMsci, each block under a header in its hue.] Four documents, 131 classes, one page. [Back to the panel on the right: S5, opened by the deep link.] Superclass: I1 Argumentation, from CRMinf. [Properties tab, first row:] I1 · J2 concluded that · I2 Belief. S5 declares no property of its own: everything it can say comes from other documents, and here it is all in one place. <i>Move the mouse off the demo before pressing →. Wifi down: O shows the screenshot.</i></aside>
+</section>
+
+<!-- 9 · demo 2 -->
+<section class="slide demo" data-t="60">
+  <div class="lab"><span>live · demo 2 · one step</span><span>Explore → Experiment</span></div>
+  <h2 class="h xs">One step: <span class="acc">ask what the specification licenses.</span></h2>
+  <div class="rec">
+    <div><b>domain</b>S4 Single Observation</div>
+    <div><b>property</b>O8 observed: only what S4 can take stays lit</div>
+    <div class="a"><b>range</b>6 of 131 classes left: S15 and its five subclasses</div>
+    <div><b>read back</b>an English sentence and instance-level Turtle</div>
+  </div>
+  <div class="live ia" data-src="?ont=crm,crminf,crmdig,crmsci" data-fallback="media/demo2-final.png"></div>
+  <div class="src">Rule: subsumption over declared domains and ranges, through the transitive subClassOf closure. The Turtle uses blank nodes and only the prefixes the triple needs.</div>
+  <aside class="notes"><b>[1:00]</b> One step: what may I say? [Explore, top bar → Experiment tab. Domain +: click S4 Single Observation, in the CRMsci block.] The table now offers only the properties a single observation can take. [Property +: O8 observed.] [Range +:] six classes of 131 are left: S15 and its five subclasses. The same question as “which cities are near Bari”, answered by the arrangement. [Click S15.] It reads the triple back in English and writes instance-level Turtle, with only the prefixes it uses. The rule is plain subsumption over declared domains and ranges. <i>Move the mouse off the demo before pressing →.</i></aside>
+</section>
+
+<!-- 10 · merge then close -->
+<section class="slide c" data-t="35" data-steps="1">
+  <div class="lab"><span>how it works · 10</span><span>paper, Sect. 5</span></div>
+  <h2 class="h s">Merge first, <span class="acc">then compute the closures.</span></h2>
+  <div class="body v mid">
+    <div class="mg">
+      <div class="dicts">
+        <div class="dct"><b>CIDOC CRM</b>E4 E7 E31 E54 … P70 …</div>
+        <div class="dct sci"><b>CRMsci</b>S2 S5 S13 S21 S27 … O5 O24 …</div>
+        <div class="dct dig"><b>CRMdig</b>D9 D11 … L20 …</div>
+        <div class="dct inf"><b>CRMinf</b>I1 I2 … J2 …</div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="uni">
+        <span class="kl">one dictionary, keyed by bare code</span>
+        <div class="ln"><span class="cc crm">E7</span> <span class="cc sci">S5</span> <span class="cc dig">D11</span> <span class="cc inf">I1</span> <span class="cc sci">S21</span> <span class="cc crm">E4</span> <span class="cc inf">I2</span> <span class="cc dig">D9</span> …</div>
+        <div data-at="1" style="display:flex;flex-direction:column;gap:1vmin">
+          <span class="kl" style="color:#ff8a5c">then the closures, over the union</span>
+          <div class="ln"><span class="cc sci">S5</span> <span class="sub">⊑</span> <span class="cc inf">I1</span> <span class="sub">⊑</span> <span class="cc crm">E7</span> ⊑ E5 ⊑ E4</div>
+          <div class="ln"><span class="cc dig">D11</span> <span class="sub">⊑</span> <span class="cc sci">S21</span> ⊑ <span class="cc sci">S27</span> <span class="sub">⊑</span> <span class="cc inf">I1</span></div>
+          <div class="ln"><span class="cc sci">S13</span> ⊑ S11 ⊑ S10 ⊑ <span class="cc sci">S15</span> <span class="sub">⊑</span> <span class="cc crm">E1</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="flex:0 0 auto" data-at="1">
+      <div class="pt"><b>no namespace logic</b><p>A chain crosses a model boundary the way it crosses any other edge.</p></div>
+      <div class="pt"><b>a bounded search</b><p>Bidirectional, subsumption at every hop; up to 4 steps, 600 states per level, 100 results. Truncation is shown.</p></div>
+      <div class="pt k"><b>“loose”</b><p>The ends fit the declared domain or range only through a distant superclass: flagged, and hideable.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><b>[0:35]</b> How it works, in one sentence: every loaded model is merged into one dictionary keyed by bare code, and only then are the closures computed. [→] So S5 inherits from I1, D11 from S21, and the search contains no namespace logic at all: a chain crosses a model boundary the way it crosses any other edge. The path finder is a bounded bidirectional search; when it truncates it says so, and chains whose ends only fit through a distant superclass are flagged “loose”.</aside>
+</section>
+
+<!-- 11 · demo 3 -->
+<section class="slide demo" data-t="65" data-w="paths">
+  <div class="lab"><span>live · demo 3 · many steps</span><span>Path finder · tick “hide loose paths” after each load</span></div>
+  <h2 class="h xs">Many steps: <span class="acc">chains that no single document contains.</span></h2>
+  <div class="cap">
+    <div class="qs ia"><button class="btn" data-q="0">S5 → I2</button><button class="btn" data-q="1">S13 → D9</button><button class="btn" data-q="2">D11 → S13</button></div>
+    <div class="tx">
+      <div data-cur="0"><b>1 sound chain:</b> <span class="cc sci">S5</span> <span class="pp">–<b>J2</b>→</span> <span class="cc inf">I2</span>. It exists only because CRMsci declares S5 ⊑ I1, and CRMinf gives I1 the property J2.</div>
+      <div data-cur="1"><b>3 sound chains</b>, e.g. <span class="cc sci">S13</span> <span class="pp">–<b>O5i</b>→</span> <span class="cc sci">S2</span> <span class="pp">–<b>P70i</b>→</span> <span class="cc dig">D9</span>: CRMsci, base CRM and CRMdig in one chain.</div>
+      <div data-cur="2"><b>O24 measured</b> comes first, flagged loose. <span class="cc dig">D11</span> is a measurement only through <span class="cc sci">S21</span>, declared in CRMsci: before the import, an inert label.</div>
+    </div>
+  </div>
+  <div class="live ia" data-src="?ont=crm,crminf,crmdig,crmsci&amp;path=S5,I2" data-fallback="media/demo3-S5-I2.png"></div>
+  <aside class="notes"><b>[1:05]</b> Three chains that only exist across documents. [Tick “hide loose paths”.] S5 to I2: one sound chain, S5 J2 I2. It exists only because CRMsci puts S5 under I1 and CRMinf gives I1 that property: read CRMsci alone and you cannot see it. [→ · tick “hide loose paths” again] Sample to data object: three chains, through sample taking or sample splitting, then “is documented in”: CRMsci, base CRM and CRMdig in one chain. [→] Digital measurement to sample: “measured” comes first, flagged loose, because the sample reaches the declared range only through three superclasses. Before CRMsci was loaded, S21 was an inert label and nothing passed through it. <i>Without the tick: 20, 6 and 8 direct paths, mostly loose. Mouse off the demo before →.</i></aside>
+</section>
+
+<!-- 12 · pattern -->
+<section class="slide dark" data-t="15" data-steps="1">
+  <div class="lab"><span>the pattern · 12</span><span></span></div>
+  <div class="fit"><p>89 links. <span class="acc">Each one a fact about the family that no single document states in full.</span></p></div>
+  <div class="lab" data-at="1"><span style="font-size:3vmin;color:#fff;text-transform:none;letter-spacing:-.01em;font-family:var(--sans);font-weight:600">Mendeleev's lesson, at our scale: arrange what is known, and what was implicit becomes something you can check.</span><span></span></div>
+  <aside class="notes"><b>[0:15]</b> 89 links. Each one is a fact about the family that no single document states in full. [→] Mendeleev's lesson, at our scale: arrange what is known, and what was implicit becomes something you can check.</aside>
+</section>
+
+<!-- 13 · scope -->
+<section class="slide c" data-t="40" data-steps="2">
+  <div class="lab"><span>scope · 13</span><span>paper, Sect. 5 · what is verified and what is not</span></div>
+  <h2 class="h s">What it does, <span class="dim">and what it doesn't.</span></h2>
+  <div class="body">
+    <div class="col g1 pts">
+      <div class="pt"><b>verified</b><p>Entity counts against the official declarations, recomputed by a script shipped with the paper.</p></div>
+      <div class="pt"><b>verified</b><p>The transitive subclass closure across model boundaries.</p></div>
+      <div class="pt"><b>documented, not scripted</b><p>The path results: each one is a deep link you can re-enter.</p></div>
+    </div>
+    <div class="col g1 pts" data-at="1">
+      <div class="pt k"><b>absent by design</b><p>subPropertyOf entailment: a real limit, since CRMsci alone declares 40 subproperty links.</p></div>
+      <div class="pt k"><b>absent by design</b><p>owl:inverseOf (inverses exist because the RDFS lists them), transitivity, cardinality, quantifiers, shortcuts.</p></div>
+      <div class="pt k"><b>no consistency checking</b><p>It prevents an inadmissible triple; it does not diagnose one.</p></div>
+    </div>
+  </div>
+  <p class="q" data-at="2" style="flex:0 0 auto"><b>“No path found” is not a proof of absence.</b> An admissible triple says what the schema allows, not that the model is adequate.</p>
+  <div class="src">Where it sits: LODE 2, presented this morning, aggregates modules into documentation to read; an editor with a reasoner builds and verifies an ontology. This tool is for applying a standard you did not design. Full comparison in the bonus tracks.</div>
+  <aside class="notes"><b>[0:40]</b> Let me be precise about what this is. Verified: the counts, against the declarations, with a script shipped with the paper; and the subclass closure across models. The demos are deep links: re-enterable, documented, not scripted. [→] Absent by design: subproperty entailment, a real limit since CRMsci alone declares 40; owl:inverseOf, transitivity, cardinality, shortcuts; no consistency checking. [→] So “no path found” is not a proof of absence, and an admissible triple tells you what the schema allows, not that a claim is true or a model adequate. Where it sits: LODE 2, this morning, aggregates modules into documentation you read; an editor with a reasoner builds and verifies. This is for applying a standard you did not design.</aside>
+</section>
+
+<!-- 14 · uptake -->
+<section class="slide c" data-t="40" data-w="uptake" data-steps="2">
+  <div class="lab"><span>uptake · 14</span><span>Google Analytics 4 · 1 Dec 2021 – 4 Aug 2026</span></div>
+  <h2 class="h s">Preliminary uptake signals: <span class="acc">reach, not learning.</span></h2>
+  <div class="body">
+    <div class="col g1 mid stats">
+      <div class="stat m rise">2,552<small>active users in 56 months</small></div>
+      <div class="stat m rise" style="--d:.15s">540<span class="u">&thinsp;s</span><small>mean engagement per active user</small></div>
+      <div class="stat m rise" style="--d:.3s">654<small>cities · 111 with five or more users</small></div>
+    </div>
+    <div class="col g15 mid" data-at="1">
+      <div class="bh"><span>where sessions come from · selected referrers</span><span>sessions</span></div>
+      <div class="bars" id="up-bars" style="--lw:27ch;--vw:5ch"></div>
+      <div class="src">Out of 9,222 sessions. Course environments: Google Classroom and the Moodle instances of five universities. Documents and meetings: Word online, Teams, Webex, Zoom, Gmail.</div>
+    </div>
+  </div>
+  <div class="src" data-at="2"><b class="acc">No user study.</b> Page views measure depth of exploration (each inspected class is a view), not visits. Default bot filter only; ad blockers lower the counts; the author's development traffic was never filtered out. A likely independent derivative (2,587 views, 150 users) is excluded.</div>
+  <aside class="notes"><b>[0:40]</b> Is it used? Analytics since December 2021: 2,552 active users, about nine minutes of engagement each, 654 cities. [→] The referrers say where: 302 sessions from course environments, Google Classroom and five university Moodles; 224 from documents and meetings, Word, Teams, Webex; and the community, GitHub and linked.art. Only 82 from my own institution. [→] These are signals of reach, not of learning: there is no user study yet, and page views measure depth, because every inspected class counts as a view.</aside>
+</section>
+
+<!-- 15 · next -->
+<section class="slide c" data-t="30">
+  <div class="lab"><span>next · 15</span><span>paper, Sect. 7</span></div>
+  <h2 class="h s">Next: <span class="acc">a study with users</span>, then the rest of the family.</h2>
+  <div class="body">
+    <div class="col g15 mid">
+      <div class="flow4">
+        <div class="f4"><span class="nb">1</span><div><b>A teaching study</b><p>In a graduate course where the tool is already used informally: real modelling tasks, SUS and UEQ-S, as SciGraphChat did.</p></div></div>
+        <div class="f4"><span class="nb">2</span><div><b>Verify the entailments</b><p>Systematically against the declarations, starting with subPropertyOf.</p></div></div>
+        <div class="f4"><span class="nb">3</span><div><b>The rest of the family</b><p>CRMgeo, CRMarchaeo, CRMba: a registry entry, code prefixes, a data file and a hue, as for CRMsci.</p></div></div>
+        <div class="f4"><span class="nb">4</span><div><b>Two debts to the reader</b><p>A legend for the colour families; the entity URI in the detail panel.</p></div></div>
+      </div>
+    </div>
+    <div class="col g1 mid pts">
+      <div class="pt"><b>how far it generalises</b><p>Closures, triple builder and path finder need only RDFS. The table needs short codes: universal in the CRM family, <strong>declared nowhere in the RDF</strong>.</p></div>
+      <div class="pt k"><b>so</b><p>Modular, code-bearing standards, and no further. Desktop only: a whole model in view is desk work.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><b>[0:30]</b> So the next step is a teaching study in a graduate course where the tool is already used informally, with real tasks and SUS and UEQ-S, as SciGraphChat did. Then verifying the entailments, starting with subproperties; the rest of the family, CRMgeo, CRMarchaeo, CRMba, at the cost CRMsci showed; and two debts, a colour legend and the URI in the panel. It generalises to modular standards with short codes, and no further: the code is declared nowhere in the RDF.</aside>
+</section>
+
+<!-- 16 · takeaway -->
+<section class="slide dark" data-t="20" data-steps="1">
+  <div class="lab"><span>takeaway · 16</span><span></span></div>
+  <div class="fit"><p><span class="reg">Modular standards scatter their meaning across documents.</span> <span class="acc">Where putting it back together is mechanical, the documentation can do it.</span></p></div>
+  <div class="lab" data-at="1"><span style="font-size:3vmin;color:#fff;text-transform:none;letter-spacing:-.01em;font-family:var(--sans);font-weight:600">For the discussion: should the documentation of a modular ontology be something you can query?</span><span></span></div>
+  <aside class="notes"><b>[0:20]</b> Modular standards scatter their meaning across documents and leave the reader to put it back together. Where that is mechanical, the documentation can do it. [→] A question for the discussion that follows: should the documentation of a modular ontology be something you can query?</aside>
+</section>
+
+<!-- 17 · closing -->
+<section class="slide" data-t="10">
+  <div class="lab"><span>thank you</span><span>bonus tracks →</span></div>
+  <div class="fin">
+    <p class="ty">Thank you.</p>
+    <p class="qq">Questions?</p>
+    <p class="url"><a href="https://remogrillo.github.io/cidoc-crm_periodic_table/">remogrillo.github.io/cidoc-crm_periodic_table</a></p>
+  </div>
+  <div class="lab" style="text-transform:none"><span>github.com/RemoGrillo/cidoc-crm_periodic_table · doi.org/10.5281/zenodo.21821748 · CEUR-WS Vol-4291 · remo.grillo@unibo.it</span><span></span></div>
+  <aside class="notes"><b>[0:10]</b> Thank you. The table is live at this address. Questions welcome. (B jumps to the bonus tracks.)</aside>
+</section>
+
+<!-- ============ bonus tracks ============ -->
+<section class="slide red" data-bonus>
+  <div class="lab part"><span>bonus tracks</span><span>for the questions</span></div>
+  <div class="fit" style="font-weight:900"><p>bonus tracks</p></div>
+  <div class="lab"><span>related work · coverage · referrers · the CRMsci import · editors · the live table</span><span></span></div>
+  <aside class="notes">Bonus material for Q&amp;A. Jump back to the closing slide with ←.</aside>
+</section>
+
+<!-- B1 · related work -->
+<section class="slide c" data-bonus>
+  <div class="lab"><span>bonus · related work · 1</span><span>paper, Table 1 · plus LODE 2 (Sci-K 2026)</span></div>
+  <h2 class="h s">What each genre offers, <span class="dim">for the four capabilities claimed.</span></h2>
+  <div class="body v mid">
+    <table class="tb">
+      <thead><tr><th></th><th>one surface</th><th>cross-document closure</th><th>constrained triple</th><th>chain search</th></tr></thead>
+      <tbody>
+        <tr><td>Official HTML declarations</td><td>per model</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Generated docs (WIDOCO)</td><td>per model</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>LODE 2 <span class="mut" style="font-size:.75em">· Sci-K 2026, as presented</span></td><td>✓</td><td>✓</td><td>–</td><td>–</td></tr>
+        <tr><td>Graph visualisers (WebVOWL)</td><td>per model</td><td>–</td><td>–</td><td>–</td></tr>
+        <tr><td>Ontology management (OntoME)</td><td>–</td><td>✓</td><td>–</td><td>–</td></tr>
+        <tr><td>Ontology editor + reasoner</td><td>–</td><td>✓</td><td>✓</td><td>partial</td></tr>
+        <tr class="hl"><td>Periodic Table</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+      </tbody>
+    </table>
+    <div class="src">Compiled from each resource's own documentation (4 Aug 2026): “–” means not among the documented features, not unattainable. The LODE 2 row is added for this talk from its Sci-K 2026 paper (aggregation of imported modules, closure, light inferences); not tested by us on the CRM family. The editor is an upper bound on raw capability: what separates it from the last row is purpose.</div>
+  </div>
+  <aside class="notes">If asked about LODE: same problem, modular documentation. LODE 2 is more general (any OWL ontology, annotations, publication). What the Periodic Table adds is asking: the triple builder and the path finder. Don't claim generated docs are per-model only.</aside>
+</section>
+
+<!-- B2 · coverage -->
+<section class="slide c" data-bonus>
+  <div class="lab"><span>bonus · coverage · 2</span><span>paper, App. A · count_coverage.py over the JSON the interface loads</span></div>
+  <h2 class="h s">Coverage, and the links <span class="acc">out of each document.</span></h2>
+  <div class="body v mid">
+    <table class="tb">
+      <thead><tr><th>model</th><th>version</th><th class="n">classes</th><th class="n">forward</th><th class="n">inverse</th><th>links out of the document (subclass + subproperty)</th></tr></thead>
+      <tbody>
+        <tr><td>CIDOC CRM</td><td>7.1.3</td><td class="n">75</td><td class="n">164</td><td class="n">144</td><td>–</td></tr>
+        <tr><td>CRMsci</td><td>3.2</td><td class="n">28</td><td class="n">39</td><td class="n">38</td><td>10 + 10 to CRM · 4 + 6 to CRMinf</td></tr>
+        <tr><td>CRMdig</td><td>5.0</td><td class="n">14</td><td class="n">22</td><td class="n">21</td><td>8 + 20 to CRM · 1 + 2 to CRMsci</td></tr>
+        <tr><td>CRMinf</td><td>1.2.1</td><td class="n">14</td><td class="n">27</td><td class="n">25</td><td>4 + 24 to CRM</td></tr>
+        <tr class="hl"><td>Total</td><td></td><td class="n">131</td><td class="n">252</td><td class="n">228</td><td>89</td></tr>
+        <tr><td class="mut">CIDOC CRM</td><td class="mut">6.2.1</td><td class="n mut">84</td><td class="n mut">153</td><td class="n mut">133</td><td class="mut">alternative base, no extensions</td></tr>
+      </tbody>
+    </table>
+    <div class="src">CRMsci declares 39 forward properties and 38 inverses because O30 determined position has a literal range. CRM 6.2.1 has more classes than 7.1.3 because the 7.x revisions deprecated and merged several.</div>
+  </div>
+  <aside class="notes">All counts reproducible from the official RDFS releases: converter in the repository, then count_coverage.py.</aside>
+</section>
+
+<!-- B3 · referrers -->
+<section class="slide c" data-bonus>
+  <div class="lab"><span>bonus · referrers · 3</span><span>paper, App. B · sessions by referring host</span></div>
+  <h2 class="h s">Where the sessions come from.</h2>
+  <div class="body v mid">
+    <table class="tb sm">
+      <thead><tr><th>group</th><th class="n">sessions</th><th>hosts</th></tr></thead>
+      <tbody>
+        <tr><td>Course environments</td><td class="n">302</td><td>classroom.google.com 158 · moodle.lmu.de 98 · e.fhs.upr.si 15 · uni-marburg 15 · virtuale.unibo.it 8 · moodle.univie.ac.at 6 · …</td></tr>
+        <tr><td>Documents, chat, meetings</td><td class="n">224</td><td>Teams 119 · Word online 50 · Gmail 15 · Webex 13 · Zimbra 13 · Google Docs 9 · Skype 3 · Zoom 2</td></tr>
+        <tr><td>Community</td><td class="n">413</td><td>github.com 302 · linked.art 97 · t.co 8 · intarch.ac.uk 5 · researchgate.net 1</td></tr>
+        <tr><td>Search engines</td><td class="n">3,464</td><td>of which Google 3,352</td></tr>
+        <tr><td>AI assistants</td><td class="n">25</td><td>chatgpt.com 22 · copilot.microsoft.com 3</td></tr>
+        <tr><td>Author's institution</td><td class="n">82</td><td>dh.itatti.harvard.edu</td></tr>
+        <tr><td>Direct</td><td class="n">4,676</td><td>no referrer</td></tr>
+      </tbody>
+    </table>
+    <div class="src">9,222 sessions from 44 sources in total. Development traffic (localhost, self-referrals) was not filtered and is not shown here.</div>
+  </div>
+  <aside class="notes">Teaching and professional circulation are the informative parts; totals are inflated by depth of exploration and depressed by ad blockers.</aside>
+</section>
+
+<!-- B4 · the CRMsci import -->
+<section class="slide c" data-bonus>
+  <div class="lab"><span>bonus · CRMsci · 4</span><span>paper, Sect. 4 · App. figure</span></div>
+  <h2 class="h s">Adding CRMsci: <span class="acc">four small things, and nothing else.</span></h2>
+  <div class="body">
+    <div class="fig g15"><img src="media/fig-crmsci-block.png" alt="The CRMsci block of the table" style="max-width:100%;max-height:100%;object-fit:contain;outline:1px solid var(--wash2)"></div>
+    <div class="col g1 mid pts">
+      <div class="pt"><b>what it took</b><p>A registry entry, two code-prefix declarations, a data file and a provenance hue.</p></div>
+      <div class="pt"><b>a hue chosen by measurement</b><p>Indigo #3A3FA0: 37° of hue from its nearest neighbour among the model and family colours, 8.8:1 contrast on white.</p></div>
+      <div class="pt"><b>coloured on arrival</b><p>20 of 28 classes took their family colour from the hierarchy; grey marks classes under no anchor. Note I1 above S5 and S27.</p></div>
+    </div>
+  </div>
+  <aside class="notes">The same four steps, plus a wider code pattern for two-letter prefixes (SP, AP), would bring in CRMgeo, CRMarchaeo or CRMba.</aside>
+</section>
+
+<!-- B5 · editors -->
+<section class="slide c" data-bonus>
+  <div class="lab"><span>bonus · editors · 5</span><span>paper, Sect. 3</span></div>
+  <h2 class="h s">Why not an ontology editor with a reasoner? <span class="dim">Same power, different purpose.</span></h2>
+  <div class="body">
+    <div class="col g1 pts">
+      <div class="pt"><b>raw capability</b><p>Load the four RDFS files into an editor with an OWL reasoner and the capability is there: an upper bound.</p></div>
+      <div class="pt"><b>building and verifying</b><p>An editor's unit of work is the axiom; its question is whether a model is consistent.</p></div>
+    </div>
+    <div class="col g1 pts">
+      <div class="pt"><b>applying</b><p>The common task is downstream: translating “this sample was measured, and here is the file the instrument wrote” into codes of a standard you did not design.</p></div>
+      <div class="pt k"><b>the cost of the question</b><p>“Which properties may hold between a sample and a data object?” There: a reasoning environment and a formal query. Here: <code>?path=S13,D9</code>.</p></div>
+    </div>
+  </div>
+  <aside class="notes">Documentation and modelling support are usually separate artefacts; for a modular standard they should not be.</aside>
+</section>
+
+<!-- B6 · live table -->
+<section class="slide demo" data-bonus>
+  <div class="lab"><span>bonus · live · 6</span><span>all four models</span></div>
+  <h2 class="h xs">The live table, <span class="acc">for the questions.</span></h2>
+  <div class="live ia" data-src="?ont=crm,crminf,crmdig,crmsci" data-fallback="media/demo1-S5.png"></div>
+  <aside class="notes">Free exploration for Q&amp;A. R reloads, O shows the screenshot.</aside>
+</section>
+
+<div id="track"><div id="bar"></div></div>
+<div id="pn"></div>
+<div id="clock"></div>
+<script>
+(function(){
+  var W = {};
+  var PRINT = /[?&]print\b/.test(location.search);
+  var PREVIEW = /[?&]preview\b/.test(location.search);   // a live thumbnail inside the presenter window
+  if (PREVIEW) document.body.classList.add('preview');
+  if (PRINT){ document.body.classList.add('print'); document.documentElement.classList.add('print'); }
+  function $(s, sel){ return s.querySelector(sel); }
+  function $$(s, sel){ return [].slice.call(s.querySelectorAll(sel)); }
+  function later(s, fn, ms){ var t = setTimeout(fn, ms); (s._t = s._t || []).push(t); return t; }
+  function clearTimers(s){ (s._t||[]).forEach(clearTimeout); (s._i||[]).forEach(clearInterval); s._t = []; s._i = []; }
+  function num(v, d){ return v.toFixed(d == null ? 3 : d); }
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  function el(tag, attrs, parent){ var e = document.createElementNS(SVGNS, tag); for (var k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+  function txt(parent, x, y, t, cls, anchor, size, weight){
+    var e = el('text', {x: x, y: y, 'class': cls || '', 'text-anchor': anchor || 'start'}, parent);
+    if (size) e.setAttribute('font-size', size); if (weight) e.setAttribute('font-weight', weight);
+    e.textContent = t; return e;
+  }
+  function div(cls, parent, text){ var e = document.createElement('div'); if (cls) e.className = cls; if (text != null) e.textContent = text; if (parent) parent.appendChild(e); return e; }
+  function fmt(n){ return n.toLocaleString('en-US'); }
+
+  // bar rows: [label, value, max, valueText, cls, threshold]
+  function barsHTML(rows){
+    return rows.map(function(r){
+      return '<div class="br ' + (r[4] || '') + '"><span class="l">' + r[0] + '</span><span class="tr"><span class="fl" data-w="' + (r[1] / r[2] * 100) + '"></span>' +
+        (r[5] != null ? '<span class="th" style="left:' + (r[5] / r[2] * 100) + '%"></span>' : '') + '</span><span class="vl">' + r[3] + '</span></div>';
+    }).join('');
+  }
+  function zero(box){ $$(box, '.fl').forEach(function(f){ f.style.width = '0'; }); }
+  function grow(box){
+    if (PRINT){ $$(box, '.fl').forEach(function(f){ f.style.width = f.dataset.w + '%'; }); return; }
+    zero(box);
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ $$(box, '.fl').forEach(function(f, i){ setTimeout(function(){ f.style.width = f.dataset.w + '%'; }, i * 60); }); }); });
+  }
+
+  /* ---- 02 · atlas: the same cities, as a list and as a map ---- */
+  W.atlas = {
+    // [city, latitude, longitude]
+    C: [['Agrigento', 37.31, 13.58], ['Ancona', 43.62, 13.52], ['Aosta', 45.74, 7.32], ['Bari', 41.12, 16.87], ['Bergamo', 45.70, 9.67],
+      ['Bologna', 44.49, 11.34], ['Bolzano', 46.50, 11.35], ['Brescia', 45.54, 10.21], ['Brindisi', 40.63, 17.94], ['Cagliari', 39.22, 9.12],
+      ['Campobasso', 41.56, 14.66], ['Catania', 37.50, 15.09], ['Catanzaro', 38.91, 16.59], ['Cosenza', 39.30, 16.25], ['Crotone', 39.08, 17.13],
+      ['Firenze', 43.77, 11.26], ['Foggia', 41.46, 15.55], ['Genova', 44.41, 8.93], ['Grosseto', 42.76, 11.11], ["L'Aquila", 42.35, 13.40],
+      ['La Spezia', 44.10, 9.82], ['Latina', 41.47, 12.90], ['Lecce', 40.35, 18.17], ['Livorno', 43.55, 10.31], ['Matera', 40.67, 16.60],
+      ['Messina', 38.19, 15.55], ['Milano', 45.46, 9.19], ['Napoli', 40.85, 14.27], ['Olbia', 40.92, 9.50], ['Oristano', 39.90, 8.59],
+      ['Padova', 45.41, 11.88], ['Palermo', 38.12, 13.36], ['Parma', 44.80, 10.33], ['Perugia', 43.11, 12.39], ['Pescara', 42.46, 14.21],
+      ['Pisa', 43.72, 10.40], ['Potenza', 40.64, 15.80], ['Ravenna', 44.42, 12.20], ['Reggio Calabria', 38.11, 15.65], ['Rimini', 44.06, 12.57],
+      ['Roma', 41.90, 12.50], ['Salerno', 40.68, 14.77], ['Sassari', 40.73, 8.56], ['Siena', 43.32, 11.33], ['Siracusa', 37.08, 15.29],
+      ['Taranto', 40.47, 17.24], ['Torino', 45.07, 7.69], ['Trapani', 38.02, 12.51], ['Trento', 46.07, 11.12], ['Trieste', 45.65, 13.78],
+      ['Udine', 46.06, 13.24], ['Venezia', 45.44, 12.33], ['Verona', 45.44, 10.99]],
+    // names kept on the map, with their label side (sb = below, sl = left)
+    LAB: {Torino: 'sb', Milano: 'sl', Venezia: '', Trieste: '', Genova: 'sl', Bologna: 'sb', Firenze: '', Roma: '', Napoli: 'sl', Bari: '', Palermo: '', 'Reggio Calabria': '', Cagliari: ''},
+    R: 150,
+    km: function(a, b){
+      var r = Math.PI / 180, dl = (b[1] - a[1]) * r, dg = (b[2] - a[2]) * r;
+      var h = Math.sin(dl / 2) * Math.sin(dl / 2) + Math.cos(a[1] * r) * Math.cos(b[1] * r) * Math.sin(dg / 2) * Math.sin(dg / 2);
+      return 6371 * 2 * Math.asin(Math.sqrt(h));
+    },
+    init: function(s){
+      var self = this, box = this.box = $(s, '.atlas'), C = this.C.slice().sort(function(a, b){ return a[0].localeCompare(b[0]); });
+      var bari = C.filter(function(c){ return c[0] === 'Bari'; })[0];
+      this.items = C.map(function(c, j){
+        var e = div('ct', box);
+        e.innerHTML = '<i></i><b>' + c[0] + '</b><span class="co">' + c[1].toFixed(1) + '° N · ' + c[2].toFixed(1) + '° E</span>';
+        e.style.transitionDelay = (j * 16) + 'ms';
+        if (c === bari) e.classList.add('home');
+        if (c[0] in self.LAB){ e.classList.add('lb'); if (self.LAB[c[0]]) e.classList.add(self.LAB[c[0]]); }
+        var d = self.km(bari, c); if (c !== bari && d <= self.R) e.classList.add('near');
+        return {e: e, c: c, d: d};
+      });
+      this.ring = div('at-ring', box);
+      var near = this.items.filter(function(x){ return x.e.classList.contains('near'); }).sort(function(a, b){ return a.d - b.d; });
+      var words = ['None', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+      $(s, '#at-c').textContent = C.length - 1;
+      $(s, '#at-n').textContent = (words[near.length] || near.length);
+      $(s, '#at-dl').innerHTML = near.map(function(x){ return '<span>' + x.c[0] + '</span><span>' + Math.round(x.d) + ' km</span>'; }).join('');
+      this.layout();
+    },
+    layout: function(){
+      var box = this.box, W0 = box.clientWidth, H0 = box.clientHeight, n = this.items.length, cols = 4, rows = Math.ceil(n / cols);
+      var lon0 = 6.4, lon1 = 18.9, lat0 = 36.5, lat1 = 47.0, kx = Math.cos(42 * Math.PI / 180);
+      var mx = W0 * .4, mw = W0 - mx, sc = Math.min(mw / ((lon1 - lon0) * kx), H0 / (lat1 - lat0));
+      var ox = mx + (mw - (lon1 - lon0) * kx * sc) / 2, oy = (H0 - (lat1 - lat0) * sc) / 2;
+      this.items.forEach(function(x, j){
+        var h = x.e.offsetHeight || 20, dot = x.e.firstChild.offsetWidth || 10, col = Math.floor(j / rows), row = j % rows;
+        x.lx = col * W0 / cols; x.ly = (row + .5) * H0 / rows - h / 2;
+        x.mx = ox + (x.c[2] - lon0) * kx * sc - dot / 2; x.my = oy + (lat1 - x.c[1]) * sc - h / 2;
+      });
+      var b = this.items.filter(function(x){ return x.e.classList.contains('home'); })[0], r = this.R / 111.2 * sc;
+      var bx = ox + (b.c[2] - lon0) * kx * sc, by = oy + (lat1 - b.c[1]) * sc, rs = this.ring.style;
+      rs.left = bx - r + 'px'; rs.top = by - r + 'px'; rs.width = rs.height = 2 * r + 'px';
+    },
+    step: function(s, k){
+      var box = this.box;
+      box.classList.toggle('map', k >= 1); box.classList.toggle('nb', k >= 2);
+      this.items.forEach(function(x){ x.e.style.left = (k >= 1 ? x.mx : x.lx) + 'px'; x.e.style.top = (k >= 1 ? x.my : x.ly) + 'px'; });
+      $(s, '#at-p1').classList.toggle('on', k === 1); $(s, '#at-p2').classList.toggle('on', k >= 2);
+    },
+    resize: function(s){ this.layout(); this.step(s, +s.dataset.k || 0); }
+  };
+
+  /* ---- 05 · Mendeleev: the same elements, as a list and as a table ---- */
+  W.mend = {
+    // Mendeleev 1871, groups I–VII, first five rows: [symbol, weight, group, row]
+    E: [['H', 1, 1, 1], ['Li', 7, 1, 2], ['Be', 9.4, 2, 2], ['B', 11, 3, 2], ['C', 12, 4, 2], ['N', 14, 5, 2], ['O', 16, 6, 2], ['F', 19, 7, 2],
+      ['Na', 23, 1, 3], ['Mg', 24, 2, 3], ['Al', 27.3, 3, 3], ['Si', 28, 4, 3], ['P', 31, 5, 3], ['S', 32, 6, 3], ['Cl', 35.5, 7, 3],
+      ['K', 39, 1, 4], ['Ca', 40, 2, 4], ['Ti', 48, 4, 4], ['V', 51, 5, 4], ['Cr', 52, 6, 4], ['Mn', 55, 7, 4],
+      ['Cu', 63, 1, 5], ['Zn', 65, 2, 5], ['As', 75, 5, 5], ['Se', 78, 6, 5], ['Br', 80, 7, 5]],
+    // the gaps: [name, predicted weight, group, row, element found, weight today, year]
+    G: [['eka-boron', 44, 3, 4, 'Sc', 45.0, 1879], ['eka-aluminium', 68, 3, 5, 'Ga', 69.7, 1875], ['eka-silicon', 72, 4, 5, 'Ge', 72.6, 1886]],
+    init: function(s){
+      var box = this.box = $(s, '.mdl');
+      this.cells = this.E.map(function(e){ var c = div('el', box); c.innerHTML = '<b>' + e[0] + '</b><small>' + e[1] + '</small>'; return {e: c, d: e}; });
+      this.gaps = this.G.map(function(g){
+        var c = div('el gap', box);
+        c.innerHTML = '<span class="g1"><b>?</b><small>' + g[1] + '</small><em>' + g[0] + '</em></span>' +
+          '<span class="g2"><b>' + g[4] + '</b><small>' + g[5].toFixed(1) + '</small><em>' + g[6] + '</em></span>';
+        return {e: c, d: g};
+      });
+      this.hd = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'].map(function(t){ return div('md-h', box, t); });
+      this.layout();
+    },
+    layout: function(){
+      var box = this.box, W0 = box.clientWidth, H0 = box.clientHeight, hh = Math.max(18, H0 * .06);
+      var s = Math.min(W0 / 7.6, (H0 - hh) / 5.45), g = s * .1, tw = 7 * s + 6 * g, x0 = (W0 - tw) / 2;
+      this.cells.concat(this.gaps).forEach(function(c){ c.tx = x0 + (c.d[2] - 1) * (s + g); c.ty = hh + (c.d[3] - 1) * (s + g); c.ts = s; });
+      var ls = s * .74, lg = g * .8, per = Math.max(1, Math.floor((W0 + lg) / (ls + lg))), lx = (W0 - (per * (ls + lg) - lg)) / 2;
+      this.cells.forEach(function(c, j){ c.lx = lx + (j % per) * (ls + lg); c.ly = hh + Math.floor(j / per) * (ls + lg); c.ls = ls; });
+      this.gaps.forEach(function(c){ c.lx = c.tx; c.ly = c.ty; c.ls = s; });
+      this.hd.forEach(function(h, j){ h.style.left = x0 + j * (s + g) + 'px'; h.style.width = s + 'px'; });
+    },
+    step: function(s, k){
+      var tab = k >= 1;
+      this.box.classList.toggle('tab', tab); this.box.classList.toggle('found', k >= 2);
+      this.cells.concat(this.gaps).forEach(function(c){
+        var z = tab ? c.ts : c.ls, st = c.e.style;
+        st.left = (tab ? c.tx : c.lx) + 'px'; st.top = (tab ? c.ty : c.ly) + 'px'; st.width = st.height = z + 'px'; st.fontSize = z * .2 + 'px';
+      });
+      $$(s, '.md-pane').forEach(function(p){ p.classList.toggle('on', +p.dataset.p === k); });
+    },
+    resize: function(s){ this.layout(); this.step(s, +s.dataset.k || 0); }
+  };
+
+  /* ---- 11 · path finder: one deep link per step ---- */
+  W.paths = {
+    Q: [['S5,I2', 'media/demo3-S5-I2.png'], ['S13,D9', 'media/demo3-S13-D9.png'], ['D11,S13', 'media/demo3-D11-S13.png']],
+    init: function(s){
+      $$(s, '[data-q]').forEach(function(b){ b.addEventListener('click', function(){ go(slides.indexOf(s), false, +b.dataset.q); }); });
+    },
+    step: function(s, k){
+      var q = this.Q[Math.min(k, this.Q.length - 1)];
+      liveShow($(s, '.live'), '?ont=crm,crminf,crmdig,crmsci&path=' + q[0], q[1]);
+      $$(s, '[data-q]').forEach(function(b){ b.classList.toggle('on', +b.dataset.q === k); });
+    }
+  };
+
+  /* ---- 14 · uptake: referrer bars ---- */
+  W.uptake = {
+    init: function(s){
+      $(s, '#up-bars').innerHTML = barsHTML([['course environments', 302, 302, '302', 'pick'], ['documents, chats, meetings', 224, 302, '224', 'pick'],
+        ['github.com', 302, 302, '302'], ['linked.art', 97, 302, '97'], ['author’s own institution', 82, 302, '82', 'out']]);
+    },
+    step: function(s, k){
+      var box = $(s, '#up-bars');
+      if (k >= 1){ if (!s._g){ s._g = 1; grow(box); } } else { s._g = 0; zero(box); }
+    }
+  };
+
+  /* ---- live demos: the real tool, in an iframe ---- */
+  var PT = 'https://remogrillo.github.io/cidoc-crm_periodic_table/';
+  var lives = [].slice.call(document.querySelectorAll('.live')), overLive = false;
+  lives.forEach(function(box){
+    var img = document.createElement('img'); img.className = 'lv-fb'; img.alt = 'CIDOC CRM Periodic Table, screenshot'; img.src = box.dataset.fallback; box.appendChild(img);
+    div('lv-tag', box, 'screenshot');
+    if (PRINT || PREVIEW) return;                        // thumbnails and print show the screenshot only
+    var f = document.createElement('iframe'); f.title = 'CIDOC CRM Periodic Table, live'; box.appendChild(f); box._f = f;
+    box.addEventListener('mouseenter', function(){ overLive = true; });
+    box.addEventListener('mouseleave', function(){ overLive = false; keysBack(); });
+    if (window.ResizeObserver) new ResizeObserver(function(){ liveSize(box); }).observe(box);
+    liveSize(box);
+  });
+  // a click inside the tool takes the keyboard: give it back as soon as the pointer leaves
+  function keysBack(){ var a = document.activeElement; if (a && a.tagName === 'IFRAME'){ a.blur(); window.focus(); } }
+  if (!PRINT && !PREVIEW) setInterval(function(){ if (!overLive) keysBack(); }, 500);
+  // the tool is laid out at about 1600 px wide, then scaled to the box
+  function liveSize(box){
+    var f = box._f; if (!f || !box.clientWidth) return;
+    var w = box.clientWidth, h = box.clientHeight, z = Math.max(.6, Math.min(1.4, w / +(box.dataset.vw || 1600)));
+    f.style.width = w / z + 'px'; f.style.height = h / z + 'px'; f.style.transform = 'scale(' + z + ')';
+  }
+  function liveLoad(box, src, force){
+    if (src) box._want = src;
+    if (!box._f || document.body.classList.contains('lv-off')) return;
+    src = box._want || box.dataset.src;
+    if (box._src === src && !force) return;
+    box._src = src; liveSize(box); box._f.src = PT + src;
+  }
+  function liveShow(box, src, fb){ box.querySelector('.lv-fb').src = fb; liveLoad(box, src); }
+  // load the demos of this slide and of the next one, so they are ready when needed
+  function liveEnter(n){ [n, n + 1].forEach(function(j){ if (slides[j]) $$(slides[j], '.live').forEach(function(b){ liveLoad(b); }); }); }
+  function liveReload(){ $$(slides[i], '.live').forEach(function(b){ liveLoad(b, null, true); }); }
+  function liveToggle(){
+    var off = document.body.classList.toggle('lv-off');
+    if (!off) liveEnter(i);
+  }
+
+  /* ============ engine ============ */
+  var slides = [].slice.call(document.querySelectorAll('.slide'));
+  var mainN = slides.filter(function(s){ return !s.hasAttribute('data-bonus'); }).length;
+  var bonus0 = slides.findIndex(function(s){ return s.hasAttribute('data-bonus'); });
+  var bar = document.getElementById('bar'), pn = document.getElementById('pn'), clock = document.getElementById('clock'), i = -1, k = 0, t0 = null;
+
+  slides.forEach(function(s){ var w = W[s.dataset.w]; if (w && w.init) w.init(s); });
+
+  function maxStep(s){
+    if (s._max != null) return s._max;
+    var m = +(s.dataset.steps || 0);
+    $$(s, '[data-at],[data-hl],[data-cur]').forEach(function(e){ m = Math.max(m, +(e.dataset.at || e.dataset.hl || e.dataset.cur)); });
+    return (s._max = m);
+  }
+  function applyStep(s, kk){
+    $$(s, '[data-at]').forEach(function(e){ e.classList.toggle('on', kk >= +e.dataset.at); });
+    $$(s, '[data-hl]').forEach(function(e){ e.classList.toggle('hl', kk >= +e.dataset.hl); });
+    $$(s, '[data-cur]').forEach(function(e){ e.classList.toggle('cur', kk === +e.dataset.cur); });
+    s.dataset.k = kk;
+    var w = W[s.dataset.w]; if (w && w.step) w.step(s, kk);
+  }
+
+  // size the type so the text fills its box as much as possible
+  function fit(el){
+    if (getComputedStyle(el).display === 'none') return;
+    var lo = 8, hi = Math.max(40, Math.min(el.clientHeight, el.clientWidth) * 1.2 | 0);
+    function ok(){ return el.scrollHeight <= el.clientHeight + 1 && el.scrollWidth <= el.clientWidth + 1; }
+    el.style.justifyContent = 'flex-start';
+    while (hi - lo > 1){ var m = (lo + hi) >> 1; el.style.fontSize = m + 'px'; if (ok()) lo = m; else hi = m; }
+    el.style.fontSize = lo + 'px';
+    el.style.justifyContent = '';
+  }
+  function fitAll(){ document.querySelectorAll('.fit').forEach(fit); }
+
+  if (PRINT){
+    slides.forEach(function(s){ s.classList.add('active'); var w = W[s.dataset.w]; if (w && w.enter) w.enter(s); applyStep(s, maxStep(s)); });
+    $$(document, 'video').forEach(function(v){ v.removeAttribute('controls'); });
+    fitAll(); setTimeout(fitAll, 400); window.addEventListener('load', fitAll);
+    if (document.fonts) document.fonts.ready.then(fitAll);
+    return;
+  }
+
+  function mmss(sec){ sec = Math.max(0, Math.round(sec)); return Math.floor(sec / 60) + ':' + ('0' + sec % 60).slice(-2); }
+  function plan(n){ var t = 0; for (var j = 0; j <= Math.min(n, mainN - 1); j++) t += +(slides[j].dataset.t || 0); return t; }
+  function tick(){
+    var s = slides[i]; if (!s) return;
+    var el0 = t0 === null ? 0 : (Date.now() - t0) / 1000;
+    clock.innerHTML = '<b>' + mmss(el0) + '</b> elapsed' + (s.hasAttribute('data-bonus') ? ' · bonus' : ' · slide ' + mmss(+(s.dataset.t || 0)) + ' · plan at end of slide ' + mmss(plan(i)) + ' / ' + mmss(plan(mainN - 1)));
+    tickPresenter();
+  }
+  setInterval(tick, 1000);
+
+  /* ---- presenter view: P opens a second window, driven by this one ---- */
+  var pw = null, slideT0 = Date.now();
+  var PRES_CSS = '*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%;background:#111;color:#eee;font-family:"Inter Tight",system-ui,sans-serif}' +
+    'body{display:grid;grid-template-rows:auto minmax(0,1fr) auto auto;gap:12px;padding:14px 18px}header{display:flex;align-items:baseline;gap:26px;flex-wrap:wrap}' +
+    '#pp-time{font:600 46px/1 ui-monospace,Menlo,monospace;letter-spacing:-.02em}#pp-time.late{color:#ff3d00}#pp-time.early{color:#4cc38a}' +
+    '#pp-pos,#pp-plan{font:14px ui-monospace,Menlo,monospace;color:#aaa;text-transform:uppercase;letter-spacing:.04em}#pp-wall{margin-left:auto;font:600 22px ui-monospace,Menlo,monospace;color:#888}' +
+    '#pp-notes{min-height:0;overflow:auto;font-size:clamp(18px,2.4vh,30px);line-height:1.45;background:#1a1a1a;padding:16px 22px;border-left:4px solid #ff3d00}' +
+    '#pp-notes .sg{color:#bbb}#pp-notes .past{color:#6d6d6d}#pp-notes .cur{color:#fff;background:rgba(255,61,0,.22)}#pp-notes .ar{color:#ff3d00;margin:0 .25em}#pp-notes b{color:#ff8a5c}' +
+    '.pv-row{display:flex;justify-content:center;align-items:flex-start;gap:18px;height:42vh;min-height:150px}.pv{display:flex;flex-direction:column;gap:6px;flex:0 0 auto}' +
+    '.cdl{display:flex;justify-content:space-between;gap:12px;font:13px ui-monospace,Menlo,monospace;color:#aaa;text-transform:uppercase;letter-spacing:.05em}.cdl b{color:#eee;font-weight:600}' +
+    '.cd{position:relative;height:12px;border-radius:6px;background:#2a2a2a;overflow:hidden;flex:0 0 auto}' +
+    '.cd i{position:absolute;left:0;top:0;bottom:0;width:100%;border-radius:6px;background:#4cc38a;transition:width 1s linear,background .4s}' +
+    '.cd.warn i{background:#e8a33a}.cd.idle i{background:#555}.cd.none{visibility:hidden}' +
+    '.cd.over{overflow:visible;animation:glow 1s ease-in-out infinite alternate}.cd.over i{width:100%!important;background:#ff3d00}' +
+    '.pv.over .cdl b{color:#ff3d00}.pv.over .frame{outline:2px solid #ff3d00;animation:glow 1s ease-in-out infinite alternate}' +
+    '@keyframes glow{from{box-shadow:0 0 3px 0 rgba(255,61,0,.35)}to{box-shadow:0 0 20px 5px rgba(255,61,0,.95)}}' +
+    '.frame{position:relative;flex:0 0 auto;overflow:hidden;background:#000;outline:1px solid #333}' +
+    '.frame iframe{position:absolute;left:0;top:0;width:1600px;height:900px;border:0;transform-origin:0 0;pointer-events:none}' +
+    'footer{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font:13px ui-monospace,Menlo,monospace;color:#888}' +
+    'footer button{font:13px ui-monospace,Menlo,monospace;background:#222;color:#eee;border:1px solid #444;padding:6px 12px;cursor:pointer}';
+  var PRES_BODY = '<header><span id="pp-time">0:00</span><span id="pp-pos"></span><span id="pp-plan"></span><span id="pp-wall"></span></header>' +
+    '<div id="pp-notes"></div>' +
+    '<div class="pv-row"><div class="pv" id="pv-now"><div class="cdl"><span>now</span><b id="cdt-now"></b></div><div class="cd" id="cd-now"><i></i></div><div class="frame"><iframe id="pp-now" title="current step"></iframe></div></div>' +
+    '<div class="pv" id="pv-nx"><div class="cdl"><span>next</span><b id="cdt-nx"></b></div><div class="cd" id="cd-nx"><i></i></div><div class="frame"><iframe id="pp-nx" title="next step"></iframe></div></div></div>' +
+    '<footer><button id="pp-prev">◀ back</button><button id="pp-next">next ▶</button><button id="pp-reset">reset timer</button>' +
+    '<span>▸ marks each click in the notes · keys here drive the slides window: → / space next · ← back · B bonus · T reset timer · R reload demo · O screenshots</span></footer>';
+  function deckURL(h){ return location.href.split('#')[0].split('?')[0] + '?preview#' + h; }
+  function openPresenter(){
+    if (pw && !pw.closed && pw.document.getElementById('pp-now')){ pw.focus(); return; }
+    pw = window.open('', 'pt-presenter', 'width=1280,height=780');
+    if (!pw) return;                                   // popup blocked: the slides carry on as before
+    var d = pw.document;
+    d.open();
+    d.write('<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Presenter · Periodic Table · Sci-K 2026</title><style>' + PRES_CSS + '</style></head><body>' + PRES_BODY + '</body></html>');
+    d.close();
+    d.addEventListener('keydown', function(e){ onKey(e, true); });
+    d.getElementById('pp-prev').addEventListener('click', prev);
+    d.getElementById('pp-next').addEventListener('click', next);
+    d.getElementById('pp-reset').addEventListener('click', function(){ t0 = slideT0 = Date.now(); tick(); });
+    pw.addEventListener('resize', scaleFrames);
+    pushPresenter();
+    setTimeout(scaleFrames, 60);
+  }
+  function scaleFrames(){
+    if (!pw || pw.closed) return;
+    var d = pw.document, row = d.querySelector('.pv-row'); if (!row) return;
+    // the two previews share the row: each is the largest 16:9 box that fits, with its bar exactly as wide
+    var pv = d.getElementById('pv-now'), above = pv.querySelector('.cdl').offsetHeight + pv.querySelector('.cd').offsetHeight + 12;
+    var fw = Math.max(0, Math.min((row.clientWidth - 18) / 2, (row.clientHeight - above) * 16 / 9));
+    ['pp-now', 'pp-nx'].forEach(function(id){
+      var f = d.getElementById(id); if (!f) return;
+      f.parentNode.parentNode.style.width = fw + 'px';
+      f.parentNode.style.height = fw * 9 / 16 + 'px';
+      f.style.transform = 'scale(' + (fw / 1600) + ')';
+    });
+  }
+  // countdown bar over a preview: the planned time of that slide, running down while it is on screen
+  function countdown(d, key, idx, live){
+    var bar = d.getElementById('cd-' + key), lab = d.getElementById('cdt-' + key), box = d.getElementById('pv-' + key);
+    if (!bar) return;
+    var t = idx == null ? 0 : +(slides[idx].dataset.t || 0);
+    bar.className = 'cd'; box.classList.remove('over');
+    if (!t){ bar.classList.add('none'); lab.textContent = idx == null ? 'end' : 'bonus'; return; }
+    if (!live){ bar.classList.add('idle'); bar.firstChild.style.width = '100%'; lab.textContent = (t0 === null ? 'clock starts on next · ' : 'slide ' + (idx + 1) + ' · ') + 'budget ' + mmss(t); return; }
+    var rem = t - (Date.now() - slideT0) / 1000;
+    bar.firstChild.style.width = Math.max(0, Math.min(1, rem / t)) * 100 + '%';
+    if (rem < 0){ bar.classList.add('over'); box.classList.add('over'); lab.textContent = '+' + mmss(-rem) + ' over ' + mmss(t); }
+    else { if (rem < t * .2) bar.classList.add('warn'); lab.textContent = mmss(rem) + ' left of ' + mmss(t); }
+  }
+  function frameTo(f, h){
+    if (h === null){ f.style.visibility = 'hidden'; return; }
+    f.style.visibility = '';
+    if (f.dataset.h === h) return;
+    f.dataset.h = h; f.src = deckURL(h);                 // same document, new fragment: the thumbnail moves without reloading
+  }
+  function pushPresenter(){
+    if (!pw || pw.closed) return;
+    var d = pw.document, now = d.getElementById('pp-now'); if (!now) return;
+    var s = slides[i], mx = maxStep(s);
+    frameTo(now, (i + 1) + '.' + k);
+    frameTo(d.getElementById('pp-nx'), k < mx ? (i + 1) + '.' + (k + 1) : (i + 1 < slides.length ? (i + 2) + '.0' : null));
+    d.getElementById('pp-pos').textContent = (i >= mainN ? 'bonus' + (i > mainN ? ' ' + (i - mainN) : '') : 'slide ' + (i + 1) + ' / ' + mainN) + ' · step ' + k + ' / ' + mx;
+    var n = s.querySelector('.notes'), segs = (n ? n.innerHTML : '').split('[→]');
+    d.getElementById('pp-notes').innerHTML = segs.map(function(sg, j){ return '<span class="sg' + (j < k ? ' past' : j === k ? ' cur' : '') + '">' + sg + '</span>'; }).join('<span class="ar">▸</span>');
+    var cur = d.querySelector('#pp-notes .cur'); if (cur) cur.scrollIntoView({block: 'nearest'});
+    scaleFrames(); tickPresenter();
+  }
+  function tickPresenter(){
+    if (!pw || pw.closed) return;
+    var d = pw.document, e = d.getElementById('pp-time'); if (!e) return;
+    var el0 = t0 === null ? 0 : (Date.now() - t0) / 1000, s = slides[i], bonus = i >= mainN, end = plan(i), start = end - +(s.dataset.t || 0);
+    e.textContent = mmss(el0);
+    e.className = bonus ? '' : (el0 > end + 10 ? 'late' : (el0 < start - 10 ? 'early' : ''));
+    d.getElementById('pp-plan').textContent = bonus ? 'bonus tracks' : 'this slide ' + mmss(+(s.dataset.t || 0)) + ' · plan at end ' + mmss(end) + ' / ' + mmss(plan(mainN - 1));
+    var w = new Date(); d.getElementById('pp-wall').textContent = ('0' + w.getHours()).slice(-2) + ':' + ('0' + w.getMinutes()).slice(-2);
+    var nxIdx = k < maxStep(s) ? i : (i + 1 < slides.length ? i + 1 : null);
+    countdown(d, 'now', i, t0 !== null);              // the title slide waits until the talk clock starts
+    countdown(d, 'nx', nxIdx, t0 !== null && nxIdx === i);
+  }
+
+  function mark(){ history.replaceState(null, '', '#' + (i + 1) + (k ? '.' + k : '')); tick(); pushPresenter(); }
+  function go(n, atEnd, kk){
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    var s;
+    if (n !== i){
+      if (i >= 0){
+        var old = slides[i]; old.classList.remove('active'); clearTimers(old);
+        $$(old, 'video').forEach(function(v){ v.pause(); });
+        var wo = W[old.dataset.w]; if (wo && wo.leave) wo.leave(old);
+      }
+      i = n; s = slides[i];
+      s.classList.add('active');
+      slideT0 = Date.now();
+      if (t0 === null && i > 0) t0 = Date.now();
+      var mi = Math.min(i, mainN - 1);
+      bar.style.width = (mainN > 1 ? mi / (mainN - 1) * 100 : 0) + '%';
+      var c = s.classList, b = document.body.classList;
+      b.toggle('bg-dark', c.contains('dark')); b.toggle('bg-red', c.contains('red')); b.toggle('first', i === 0);
+      pn.textContent = i >= mainN ? 'bonus' + (i > mainN ? ' · ' + (i - mainN) : '') : (i + 1) + ' / ' + mainN;
+      s.querySelectorAll('.fit').forEach(fit);
+      var w = W[s.dataset.w]; if (w && w.enter) w.enter(s);
+    } else s = slides[i];
+    k = kk != null ? Math.max(0, Math.min(kk, maxStep(s))) : (atEnd ? maxStep(s) : 0);
+    applyStep(s, k);
+    liveEnter(i);
+    mark();
+  }
+  function next(){ var s = slides[i]; if (k < maxStep(s)){ k++; applyStep(s, k); mark(); } else go(i + 1); }
+  function prev(){ var s = slides[i]; if (k > 0){ k--; applyStep(s, k); mark(); } else go(i - 1, true); }
+
+  var hm = /^#(\d+)(?:\.(\d+))?$/.exec(location.hash);
+  if (hm) go(+hm[1] - 1, false, hm[2] != null ? +hm[2] : null); else go(0);
+
+  fitAll();
+  if (document.fonts){ document.fonts.ready.then(fitAll); document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', fitAll); }
+  setTimeout(fitAll, 400);
+  window.addEventListener('load', fitAll);
+  var lastW = 0, lastH = 0;
+  function onSize(){
+    if (innerWidth === lastW && innerHeight === lastH) return; lastW = innerWidth; lastH = innerHeight; fitAll();
+    var s = slides[i], w = s && W[s.dataset.w]; if (w && w.resize) w.resize(s);
+    lives.forEach(liveSize);
+  }
+  window.addEventListener('resize', onSize);
+  if (window.ResizeObserver) new ResizeObserver(onSize).observe(document.documentElement);
+
+  // the same keys work in the slides window and in the presenter window
+  function onKey(e, fromPresenter){
+    if (e.ctrlKey || e.metaKey || e.altKey) return;
+    var key = e.key, s = slides[i], w = W[s.dataset.w];
+    if (['ArrowRight','ArrowDown','PageDown',' ','Enter'].indexOf(key) > -1){
+      if (key === ' ' && e.target.tagName === 'VIDEO') return;
+      e.preventDefault(); next();
+    }
+    else if (['ArrowLeft','ArrowUp','PageUp','Backspace'].indexOf(key) > -1){ e.preventDefault(); prev(); }
+    else if (key === 'Home') go(0);
+    else if (key === 'End') go(mainN - 1);
+    else if (key === 'b' || key === 'B') go(bonus0);
+    else if (key === 't' || key === 'T'){ t0 = slideT0 = Date.now(); tick(); }
+    else if (key === 'r' || key === 'R') liveReload();
+    else if (key === 'o' || key === 'O') liveToggle();
+    else if (key === 'p' || key === 'P'){ if (fromPresenter) window.focus(); else openPresenter(); }
+    else if (fromPresenter) return;                      // notes and fullscreen belong to the slides window
+    else if (key === 'n' || key === 'N') document.body.classList.toggle('show-notes');
+    else if (key === 'f' || key === 'F'){
+      if (!document.fullscreenElement) document.documentElement.requestFullscreen && document.documentElement.requestFullscreen();
+      else document.exitFullscreen();
+    }
+  }
+  // a thumbnail follows its fragment; the slides window only reacts if someone edits the URL
+  window.addEventListener('hashchange', function(){
+    var m = /^#(\d+)(?:\.(\d+))?$/.exec(location.hash);
+    if (m) go(+m[1] - 1, false, m[2] != null ? +m[2] : 0);
+  });
+  if (PREVIEW) return;
+  document.addEventListener('keydown', function(e){ onKey(e, false); });
+  document.addEventListener('click', function(e){
+    if (e.target.closest('.notes, .ia, button, input, a, label, select, video')) return;
+    if (e.clientX < innerWidth / 3) prev(); else next();
+  });
+  var x0 = null;
+  document.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; }, {passive: true});
+  document.addEventListener('touchend', function(e){
+    if (x0 === null || e.target.closest('.ia, video')) { x0 = null; return; }
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 40){ if (dx < 0) next(); else prev(); } x0 = null;
+  });
+})();
+</script>
+</body>
+</html>
